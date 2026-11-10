@@ -18,6 +18,8 @@ Budgets are private by design: the database only ever returns the group's combin
 - Budgets from $0 to $500 (slider or typed); the group number is rounded down to the nearest $5
 - [Supabase](https://supabase.com) free plan for shared plans (setup: `supabase-setup.sql`)
 - [OpenStreetMap](https://www.openstreetmap.org/copyright) data via Overpass and Nominatim (free, no API key)
-- [Leaflet](https://leafletjs.com/) for the map
+- [Leaflet](https://leafletjs.com/) for the map, with [CARTO](https://carto.com/attributions) map tiles
+- Routes from [routing.openstreetmap.de](https://routing.openstreetmap.de) (FOSSGIS, OSRM)
+- Place photos from [Wikimedia Commons](https://commons.wikimedia.org), credited per photo (only where a place has one)
 
 Prices are rough per-person estimates by type of place. This is an early prototype: feedback welcome!

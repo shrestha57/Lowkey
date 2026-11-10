@@ -265,6 +265,16 @@ input[type="range"]:focus-visible { outline: 3px solid var(--sky); outline-offse
 .openbadge { font-weight: 700; }
 .openbadge.yes { color: var(--mint); }
 .openbadge.no { color: var(--coral); }
+.photos { display: flex; gap: 8px; overflow-x: auto; margin: 12px -2px 0; padding: 2px; scrollbar-width: thin; }
+.photos img { height: 120px; width: auto; max-width: 220px; object-fit: cover; border-radius: 12px; border: 2px solid var(--line); flex: none; background: var(--bg); }
+.credit { font-size: 11px; color: var(--muted); margin-top: 4px; }
+.credit a { color: var(--muted); }
+.routebar { display: grid; gap: 8px; padding: 12px 14px; border-bottom: 2px solid var(--line); background: var(--surface); }
+.routebar .chips { gap: 6px; }
+.routebar .sum { font-weight: 700; font-size: 15px; }
+.routebar .sum small { display: block; font-weight: 500; color: var(--muted); font-size: 13px; }
+.routebar a { color: var(--ink); font: 600 14px var(--font-body); }
+.retry { margin-left: 8px; }
 </style>
 
 <canvas id="confetti" aria-hidden="true"></canvas>
@@ -430,11 +440,11 @@ input[type="range"]:focus-visible { outline: 3px solid var(--sky); outline-offse
         <button class="btn ghost sm" id="area-go" type="button">Go</button>
         <button class="btn mint sm" id="near-me2" type="button" aria-label="Use my location">📍</button>
       </div>
-      <div class="banner" id="sample-banner" hidden>Live places couldn't load right now, so these are <b>sample spots</b>. Try again in a moment.</div>
+      <div class="banner" id="sample-banner" hidden>The free map service is busy right now, so these are <b>sample spots</b>. <button class="btn ghost sm retry" id="retry" type="button">Try again</button></div>
       <div class="status" id="status" aria-live="polite"></div>
       <div class="split" id="split">
         <div class="list" id="list"></div>
-        <div class="mapbox" id="mapbox"><div id="map" role="region" aria-label="Map of spots"></div></div>
+        <div class="mapbox" id="mapbox"><div class="routebar" id="routebar" hidden aria-live="polite"></div><div id="map" role="region" aria-label="Map of spots"></div></div>
       </div>
       <div class="row"><button class="link" id="restart" type="button">Start a different plan</button></div>
     </div>
@@ -468,7 +478,7 @@ input[type="range"]:focus-visible { outline: 3px solid var(--sky); outline-offse
     </div>
   </section>
 
-  <p class="foot">Lowkey · early prototype. Prices are rough per-person estimates by type of place. Place data © <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener">OpenStreetMap</a> contributors.</p>
+  <p class="foot">Lowkey · early prototype. Prices are rough per-person estimates by type of place. Place data © <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener">OpenStreetMap</a> contributors · map tiles © CARTO · routes by FOSSGIS · photos from Wikimedia Commons.</p>
 </div>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.js"></script>
@@ -817,7 +827,7 @@ const SUPABASE_KEY = "sb_publishable_wNfAJEJs_eoCjoyU12GFTA__fzSicUi";
   // ---------- places data ----------
   function overpassQuery(cat, c, meters) {
     const parts = cat.tags.map(([k, v]) => `nwr["${k}"="${v}"]["name"](around:${meters},${c.lat},${c.lon});`).join("");
-    return `[out:json][timeout:25];(${parts});out center tags 120;`;
+    return `[out:json][timeout:12];(${parts});out center tags 80;`;
   }
   function kindOf(tags) { for (const key of Object.keys(KIND)) { const [k, v] = key.split("="); if (tags[k] === v) return key; } return null; }
   function estimate(key, tags) {
@@ -839,6 +849,7 @@ const SUPABASE_KEY = "sb_publishable_wNfAJEJs_eoCjoyU12GFTA__fzSicUi";
       const id = t.name.toLowerCase() + "|" + key; if (seen.has(id)) continue; seen.add(id);
       const { label, cost } = estimate(key, t);
       out.push({ name: t.name, kind: label, cost, lat, lon, dist: miles(c, { lat, lon }), addr: [t["addr:housenumber"], t["addr:street"]].filter(Boolean).join(" "), hours: t.opening_hours || "",
+        city: t["addr:city"] || "", wikidata: /^Q\d+$/.test(t.wikidata || "") ? t.wikidata : "", commons: t.wikimedia_commons || "",
         flags: { outdoor: t.outdoor_seating === "yes", wifi: /^(yes|wlan|wifi|free)$/.test(t.internet_access || ""), wheelchair: t.wheelchair === "yes", veg: /^(yes|only)$/.test(t["diet:vegetarian"] || "") } });
     }
     return out;
@@ -848,7 +859,7 @@ const SUPABASE_KEY = "sb_publishable_wNfAJEJs_eoCjoyU12GFTA__fzSicUi";
     if (cache.has(key)) return cache.get(key);
     const body = "data=" + encodeURIComponent(overpassQuery(cat, c, Math.round(radiusMi * 1609.34)));
     for (const url of OVERPASS) {
-      const t = withTimeout(25000);
+      const t = withTimeout(14000);
       try {
         const r = await fetch(url, { method: "POST", body, signal: t.signal, headers: { "Content-Type": "application/x-www-form-urlencoded" } });
         if (!r.ok) continue;
@@ -932,21 +943,119 @@ const SUPABASE_KEY = "sb_publishable_wNfAJEJs_eoCjoyU12GFTA__fzSicUi";
     return inToday || fromYday;
   }
 
+  // ---------- photos (Wikimedia Commons, freely licensed, credited) ----------
+  const photoCache = new Map();
+  const COMMONS = "https://commons.wikimedia.org/w/api.php";
+  const stripHtml = (h) => { const d = document.createElement("div"); d.innerHTML = h || ""; return (d.textContent || "").trim(); };
+  async function getJson(url) {
+    const t = withTimeout(8000);
+    try { const r = await fetch(url, { signal: t.signal }); return r.ok ? await r.json() : null; } catch { return null; } finally { t.done(); }
+  }
+  async function fileNamesFor(p) {
+    if (p.commons.startsWith("File:")) return [p.commons];
+    if (p.commons.startsWith("Category:")) {
+      const j = await getJson(`${COMMONS}?action=query&list=categorymembers&cmtitle=${encodeURIComponent(p.commons)}&cmtype=file&cmlimit=3&format=json&origin=*`);
+      const files = (j?.query?.categorymembers || []).map(m => m.title);
+      if (files.length) return files;
+    }
+    if (p.wikidata) {
+      const j = await getJson(`https://www.wikidata.org/w/api.php?action=wbgetclaims&entity=${p.wikidata}&property=P18&format=json&origin=*`);
+      return (j?.claims?.P18 || []).slice(0, 3).map(c => "File:" + c.mainsnak?.datavalue?.value).filter(f => f !== "File:undefined");
+    }
+    return [];
+  }
+  async function loadPhotos(p) {
+    const key = p.wikidata || p.commons;
+    if (photoCache.has(key)) return photoCache.get(key);
+    const job = (async () => {
+      const files = (await fileNamesFor(p)).slice(0, 3);
+      if (!files.length) return [];
+      const j = await getJson(`${COMMONS}?action=query&titles=${encodeURIComponent(files.join("|"))}&prop=imageinfo&iiprop=url|extmetadata&iiurlwidth=480&format=json&origin=*`);
+      return Object.values(j?.query?.pages || {}).map(pg => {
+        const ii = pg.imageinfo?.[0]; if (!ii?.thumburl) return null;
+        const md = ii.extmetadata || {};
+        return { src: ii.thumburl, page: ii.descriptionurl, artist: stripHtml(md.Artist?.value).slice(0, 60) || "Unknown", license: stripHtml(md.LicenseShortName?.value) || "see page" };
+      }).filter(Boolean);
+    })();
+    photoCache.set(key, job);
+    return job;
+  }
+  function renderPhotos(box, photos) {
+    if (!photos || !photos.length) return;
+    const strip = document.createElement("div"); strip.className = "photos";
+    photos.forEach(ph => { const img = document.createElement("img"); img.src = ph.src; img.alt = "Photo of the place"; img.loading = "lazy"; img.onerror = () => img.remove(); strip.appendChild(img); });
+    const credit = document.createElement("div"); credit.className = "credit";
+    credit.append("Photos: ");
+    photos.forEach((ph, i) => {
+      const a = document.createElement("a"); a.href = ph.page; a.target = "_blank"; a.rel = "noopener"; a.textContent = `${ph.artist} (${ph.license})`;
+      credit.append(a); if (i < photos.length - 1) credit.append(", ");
+    });
+    credit.append(" via Wikimedia Commons");
+    box.append(strip, credit);
+  }
+
+  // ---------- route from the viewer's own location ----------
+  const ROUTERS = { car: ["routed-car", "🚗 Drive", "drive"], foot: ["routed-foot", "🚶 Walk", "walk"], bike: ["routed-bike", "🚲 Bike", "bike"] };
+  state.routeMode = "car"; state.myLoc = null; state.routeTo = null;
+  async function originFor() {
+    if (state.myLoc) return { c: state.myLoc, mine: true };
+    try { state.myLoc = await getLocation(); return { c: state.myLoc, mine: true }; }
+    catch { return { c: state.viewCenter, mine: false }; }
+  }
+  function fmtDur(sec) { const m = Math.round(sec / 60); return m < 60 ? `${m} min` : `${Math.floor(m / 60)} h ${m % 60} min`; }
+  async function showRoute(p) {
+    if (!map) return;
+    state.routeTo = p;
+    const bar = $("routebar"); bar.hidden = false;
+    bar.innerHTML = `<div class="status"><span class="spinner" aria-hidden="true"></span><span>Finding the way to ${esc(p.name)}…</span></div>`;
+    const { c, mine } = await originFor();
+    if (state.routeTo !== p) return;
+    const [profile, label, verb] = ROUTERS[state.routeMode];
+    let route = null;
+    const t = withTimeout(10000);
+    try {
+      const r = await fetch(`https://routing.openstreetmap.de/${profile}/route/v1/driving/${c.lon},${c.lat};${p.lon},${p.lat}?overview=full&geometries=geojson`, { signal: t.signal });
+      if (r.ok) { const j = await r.json(); route = j.routes && j.routes[0]; }
+    } catch { } finally { t.done(); }
+    if (state.routeTo !== p) return;
+    const css = getComputedStyle(document.documentElement);
+    routeLayer.clearLayers();
+    L.circleMarker([c.lat, c.lon], { radius: 8, color: css.getPropertyValue("--line").trim(), weight: 3, fillColor: css.getPropertyValue("--sky").trim(), fillOpacity: 1 }).addTo(routeLayer).bindPopup(mine ? "You" : state.viewLabel);
+    let line, summary;
+    if (route) {
+      line = L.polyline(route.geometry.coordinates.map(([x, y]) => [y, x]), { color: css.getPropertyValue("--coral").trim(), weight: 6, opacity: .9 });
+      summary = `${fmtDur(route.duration)} ${verb} · ${(route.distance / 1609.34).toFixed(1)} mi`;
+    } else {
+      line = L.polyline([[c.lat, c.lon], [p.lat, p.lon]], { color: css.getPropertyValue("--coral").trim(), weight: 4, dashArray: "8 8" });
+      summary = `${miles(c, p).toFixed(1)} mi in a straight line (route service busy)`;
+    }
+    line.addTo(routeLayer);
+    map.fitBounds(line.getBounds(), { padding: [40, 40], maxZoom: 16 });
+    const gdir = `https://www.google.com/maps/dir/?api=1&destination=${p.lat.toFixed(6)},${p.lon.toFixed(6)}&travelmode=${state.routeMode === "car" ? "driving" : state.routeMode === "foot" ? "walking" : "bicycling"}`;
+    bar.innerHTML = "";
+    const modes = document.createElement("div"); modes.className = "chips";
+    chipRow(modes, Object.entries(ROUTERS).map(([id, r]) => ({ id, label: r[1] })), id => state.routeMode === id, id => { state.routeMode = id; showRoute(p); }, true);
+    const sum = document.createElement("div"); sum.className = "sum"; sum.textContent = summary;
+    const small = document.createElement("small"); small.textContent = mine ? `From you to ${p.name}` : `From ${state.viewLabel} to ${p.name} (location not shared)`; sum.appendChild(small);
+    const a = document.createElement("a"); a.href = gdir; a.target = "_blank"; a.rel = "noopener"; a.textContent = "Start in Google Maps ↗";
+    bar.append(modes, sum, a);
+  }
+
   // ---------- map ----------
-  let map = null, layer = null, tilesOk = true;
+  let map = null, layer = null, routeLayer = null, tilesOk = true;
   function ensureMap() {
     if (map) return;
     if (typeof L === "undefined") { mapOff("Map couldn't load."); return; }
-    map = L.map("map", { zoomControl: true, attributionControl: true });
-    const tiles = L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png", { maxZoom: 19, attribution: "© OpenStreetMap" });
+    map = L.map("map", { zoomControl: true, attributionControl: true, preferCanvas: true, zoomSnap: 0.5, wheelPxPerZoomLevel: 90 });
+    const tiles = L.tileLayer("https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png", { maxZoom: 19, subdomains: "abcd", detectRetina: false, updateWhenZooming: false, keepBuffer: 4, attribution: "© OpenStreetMap contributors © CARTO" });
     let errs = 0; tiles.on("tileerror", () => { errs++; if (errs > 6 && tilesOk) { tilesOk = false; mapOff("Map tiles couldn't load right now."); } });
-    tiles.addTo(map); layer = L.layerGroup().addTo(map);
+    tiles.addTo(map); layer = L.layerGroup().addTo(map); routeLayer = L.layerGroup().addTo(map);
   }
   function mapOff(msg) { $("mapbox").innerHTML = `<div class="map-off">🗺️ ${esc(msg)}</div>`; map = null; }
   const markers = new Map();
   function drawMap(list) {
     if (!map) return;
-    layer.clearLayers(); markers.clear();
+    layer.clearLayers(); markers.clear(); if (routeLayer) routeLayer.clearLayers(); $("routebar").hidden = true;
     const css = getComputedStyle(document.documentElement), c = state.viewCenter;
     L.circleMarker([c.lat, c.lon], { radius: 8, color: css.getPropertyValue("--ink").trim(), weight: 3, fillColor: css.getPropertyValue("--sky").trim(), fillOpacity: 1 }).addTo(layer).bindPopup(state.viewLabel || "Start");
     const pts = [[c.lat, c.lon]];
@@ -992,19 +1101,25 @@ const SUPABASE_KEY = "sb_publishable_wNfAJEJs_eoCjoyU12GFTA__fzSicUi";
     const on = openNow(p.hours);
     const hours = on === true ? `<span class="openbadge yes">Open now</span>` : on === false ? `<span class="openbadge no">Closed now</span>` : p.hours ? `<span>${esc(p.hours.length > 34 ? p.hours.slice(0, 34) + "…" : p.hours)}</span>` : "";
     const where = p.addr ? `<span>${esc(p.addr)}</span>` : "";
-    const mapsUrl = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(p.name + " " + p.lat.toFixed(5) + "," + p.lon.toFixed(5))}`;
+    const gq = [p.name, p.addr, p.city || state.viewLabel.replace(/^Near .*/, "")].filter(Boolean).join(", ");
+    const mapsUrl = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(gq)}`;
     el.innerHTML = `
       <div class="ticket-head"><h3>${esc(p.name)}</h3><span class="price">${p.cost === 0 ? "Free" : "~$" + p.cost}</span></div>
       <div class="meta"><span><b>${p.dist < 0.1 ? "<0.1" : p.dist.toFixed(1)} mi</b></span><span>${esc(p.kind)}</span>${where}${hours}</div>
       <div class="perf"></div>
       <div class="tags"><span class="tag">fits everyone</span>${p.cost === 0 ? '<span class="tag">free</span>' : ""}${p.flags.outdoor ? '<span class="tag">outdoor seating</span>' : ""}${p.flags.wifi ? '<span class="tag">Wi-Fi</span>' : ""}${p.flags.wheelchair ? '<span class="tag">accessible</span>' : ""}${p.flags.veg ? '<span class="tag">vegetarian options</span>' : ""}${p.sample ? '<span class="tag">sample</span>' : ""}</div>
       <div class="actions">
-        ${p.sample ? "" : `<a href="${mapsUrl}" target="_blank" rel="noopener">Directions ↗</a>`}
-        <button class="btn ghost sm show-map" type="button">Show on map</button>
+        ${p.sample ? "" : `<a href="${mapsUrl}" target="_blank" rel="noopener">Photos &amp; reviews on Google Maps ↗</a>`}
+        <button class="btn ghost sm show-map" type="button"><span class="emo" aria-hidden="true">🧭</span>Route</button>
         <button class="btn mint sm pick" type="button"><span class="emo" aria-hidden="true">🙌</span>We're doing this</button>
       </div>`;
     el.querySelector(".pick").addEventListener("click", () => choose(p));
-    const sm = el.querySelector(".show-map"); if (!map) sm.remove(); else sm.addEventListener("click", () => highlight(i, true));
+    const sm = el.querySelector(".show-map"); if (!map) sm.remove(); else sm.addEventListener("click", () => { highlight(i, true); showRoute(p); });
+    if (!p.sample && (p.wikidata || p.commons)) {
+      const box = document.createElement("div"); box.className = "photo-wrap";
+      el.querySelector(".perf").before(box);
+      loadPhotos(p).then(ph => renderPhotos(box, ph));
+    }
     return el;
   }
   function ideaTicket(it) {
@@ -1053,6 +1168,7 @@ const SUPABASE_KEY = "sb_publishable_wNfAJEJs_eoCjoyU12GFTA__fzSicUi";
     drawMap(fit);
   }
   $("sort").addEventListener("change", (e) => { state.sort = e.target.value; loadResults(); });
+  $("retry").addEventListener("click", () => { loadResults(); });
   $("area-btn").addEventListener("click", () => { const f = $("area-form2"); f.hidden = !f.hidden; if (!f.hidden) $("area-input2").focus(); });
   async function areaGo() {
     const q = $("area-input2").value.trim(); if (!q) return;
