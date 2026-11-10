@@ -2,7 +2,7 @@
 
 **Plans that fit everyone's wallet.** Friends secretly tap what they can spend, and Lowkey finds real nearby spots the whole group can afford. Nobody has to say they're broke.
 
-**Try it:** https://shrestha57.github.io/lowkey/
+**Try it:** https://shrestha57.github.io/Lowkey/
 
 ## How it works
 1. Add your crew and pick an area (or use your location).
