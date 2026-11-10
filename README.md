@@ -15,6 +15,7 @@ Budgets are private by design: the database only ever returns the group's combin
 
 ## Built with
 - Plain HTML, CSS and JavaScript (single file, no build step)
+- Budgets from $0 to $500 (slider or typed); the group number is rounded down to the nearest $5
 - [Supabase](https://supabase.com) free plan for shared plans (setup: `supabase-setup.sql`)
 - [OpenStreetMap](https://www.openstreetmap.org/copyright) data via Overpass and Nominatim (free, no API key)
 - [Leaflet](https://leafletjs.com/) for the map

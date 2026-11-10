@@ -10,7 +10,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Figtree:wght@400;500;600;700&family=JetBrains+Mono:wght@500;700&display=swap">
-<style> .leaflet-pane, .leaflet-tile, .leaflet-marker-icon, .leaflet-marker-shadow, .leaflet-tile-container, .leaflet-pane > svg, .leaflet-pane > canvas, .leaflet-zoom-box, .leaflet-image-layer, .leaflet-layer { position: absolute; left: 0; top: 0; } .leaflet-container { overflow: hidden; } .leaflet-tile, .leaflet-marker-icon, .leaflet-marker-shadow { -webkit-user-select: none; -moz-user-select: none; user-select: none; -webkit-user-drag: none; } .leaflet-tile::selection { background: transparent; } .leaflet-safari .leaflet-tile { image-rendering: -webkit-optimize-contrast; } .leaflet-safari .leaflet-tile-container { width: 1600px; height: 1600px; -webkit-transform-origin: 0 0; } .leaflet-marker-icon, .leaflet-marker-shadow { display: block; } .leaflet-container .leaflet-overlay-pane svg { max-width: none !important; max-height: none !important; } .leaflet-container .leaflet-marker-pane img, .leaflet-container .leaflet-shadow-pane img, .leaflet-container .leaflet-tile-pane img, .leaflet-container img.leaflet-image-layer, .leaflet-container .leaflet-tile { max-width: none !important; max-height: none !important; width: auto; padding: 0; } .leaflet-container img.leaflet-tile { mix-blend-mode: plus-lighter; } .leaflet-container.leaflet-touch-zoom { -ms-touch-action: pan-x pan-y; touch-action: pan-x pan-y; } .leaflet-container.leaflet-touch-drag { -ms-touch-action: pinch-zoom; touch-action: none; touch-action: pinch-zoom; } .leaflet-container.leaflet-touch-drag.leaflet-touch-zoom { -ms-touch-action: none; touch-action: none; } .leaflet-container { -webkit-tap-highlight-color: transparent; } .leaflet-container a { -webkit-tap-highlight-color: rgba(51, 181, 229, 0.4); } .leaflet-tile { filter: inherit; visibility: hidden; } .leaflet-tile-loaded { visibility: inherit; } .leaflet-zoom-box { width: 0; height: 0; -moz-box-sizing: border-box; box-sizing: border-box; z-index: 800; } .leaflet-overlay-pane svg { -moz-user-select: none; } .leaflet-pane { z-index: 400; } .leaflet-tile-pane { z-index: 200; } .leaflet-overlay-pane { z-index: 400; } .leaflet-shadow-pane { z-index: 500; } .leaflet-marker-pane { z-index: 600; } .leaflet-tooltip-pane { z-index: 650; } .leaflet-popup-pane { z-index: 700; } .leaflet-map-pane canvas { z-index: 100; } .leaflet-map-pane svg { z-index: 200; } .leaflet-vml-shape { width: 1px; height: 1px; } .lvml { behavior: url(#default#VML); display: inline-block; position: absolute; } .leaflet-control { position: relative; z-index: 800; pointer-events: visiblePainted; pointer-events: auto; } .leaflet-top, .leaflet-bottom { position: absolute; z-index: 1000; pointer-events: none; } .leaflet-top { top: 0; } .leaflet-right { right: 0; } .leaflet-bottom { bottom: 0; } .leaflet-left { left: 0; } .leaflet-control { float: left; clear: both; } .leaflet-right .leaflet-control { float: right; } .leaflet-top .leaflet-control { margin-top: 10px; } .leaflet-bottom .leaflet-control { margin-bottom: 10px; } .leaflet-left .leaflet-control { margin-left: 10px; } .leaflet-right .leaflet-control { margin-right: 10px; } .leaflet-fade-anim .leaflet-popup { opacity: 0; -webkit-transition: opacity 0.2s linear; -moz-transition: opacity 0.2s linear; transition: opacity 0.2s linear; } .leaflet-fade-anim .leaflet-map-pane .leaflet-popup { opacity: 1; } .leaflet-zoom-animated { -webkit-transform-origin: 0 0; -ms-transform-origin: 0 0; transform-origin: 0 0; } svg.leaflet-zoom-animated { will-change: transform; } .leaflet-zoom-anim .leaflet-zoom-animated { -webkit-transition: -webkit-transform 0.25s cubic-bezier(0,0,0.25,1); -moz-transition: -moz-transform 0.25s cubic-bezier(0,0,0.25,1); transition: transform 0.25s cubic-bezier(0,0,0.25,1); } .leaflet-zoom-anim .leaflet-tile, .leaflet-pan-anim .leaflet-tile { -webkit-transition: none; -moz-transition: none; transition: none; } .leaflet-zoom-anim .leaflet-zoom-hide { visibility: hidden; } .leaflet-interactive { cursor: pointer; } .leaflet-grab { cursor: -webkit-grab; cursor: -moz-grab; cursor: grab; } .leaflet-crosshair, .leaflet-crosshair .leaflet-interactive { cursor: crosshair; } .leaflet-popup-pane, .leaflet-control { cursor: auto; } .leaflet-dragging .leaflet-grab, .leaflet-dragging .leaflet-grab .leaflet-interactive, .leaflet-dragging .leaflet-marker-draggable { cursor: move; cursor: -webkit-grabbing; cursor: -moz-grabbing; cursor: grabbing; } .leaflet-marker-icon, .leaflet-marker-shadow, .leaflet-image-layer, .leaflet-pane > svg path, .leaflet-tile-container { pointer-events: none; } .leaflet-marker-icon.leaflet-interactive, .leaflet-image-layer.leaflet-interactive, .leaflet-pane > svg path.leaflet-interactive, svg.leaflet-image-layer.leaflet-interactive path { pointer-events: visiblePainted; pointer-events: auto; } .leaflet-container { background: #ddd; outline-offset: 1px; } .leaflet-container a { color: #0078A8; } .leaflet-zoom-box { border: 2px dotted #38f; background: rgba(255,255,255,0.5); } .leaflet-container { font-family: "Helvetica Neue", Arial, Helvetica, sans-serif; font-size: 12px; font-size: 0.75rem; line-height: 1.5; } .leaflet-bar { box-shadow: 0 1px 5px rgba(0,0,0,0.65); border-radius: 4px; } .leaflet-bar a { background-color: #fff; border-bottom: 1px solid #ccc; width: 26px; height: 26px; line-height: 26px; display: block; text-align: center; text-decoration: none; color: black; } .leaflet-bar a, .leaflet-control-layers-toggle { background-position: 50% 50%; background-repeat: no-repeat; display: block; } .leaflet-bar a:hover, .leaflet-bar a:focus { background-color: #f4f4f4; } .leaflet-bar a:first-child { border-top-left-radius: 4px; border-top-right-radius: 4px; } .leaflet-bar a:last-child { border-bottom-left-radius: 4px; border-bottom-right-radius: 4px; border-bottom: none; } .leaflet-bar a.leaflet-disabled { cursor: default; background-color: #f4f4f4; color: #bbb; } .leaflet-touch .leaflet-bar a { width: 30px; height: 30px; line-height: 30px; } .leaflet-touch .leaflet-bar a:first-child { border-top-left-radius: 2px; border-top-right-radius: 2px; } .leaflet-touch .leaflet-bar a:last-child { border-bottom-left-radius: 2px; border-bottom-right-radius: 2px; } .leaflet-control-zoom-in, .leaflet-control-zoom-out { font: bold 18px 'Lucida Console', Monaco, monospace; text-indent: 1px; } .leaflet-touch .leaflet-control-zoom-in, .leaflet-touch .leaflet-control-zoom-out { font-size: 22px; } .leaflet-control-layers { box-shadow: 0 1px 5px rgba(0,0,0,0.4); background: #fff; border-radius: 5px; } .leaflet-control-layers-toggle { background-image: url(images/layers.png); width: 36px; height: 36px; } .leaflet-retina .leaflet-control-layers-toggle { background-image: url(images/layers-2x.png); background-size: 26px 26px; } .leaflet-touch .leaflet-control-layers-toggle { width: 44px; height: 44px; } .leaflet-control-layers .leaflet-control-layers-list, .leaflet-control-layers-expanded .leaflet-control-layers-toggle { display: none; } .leaflet-control-layers-expanded .leaflet-control-layers-list { display: block; position: relative; } .leaflet-control-layers-expanded { padding: 6px 10px 6px 6px; color: #333; background: #fff; } .leaflet-control-layers-scrollbar { overflow-y: scroll; overflow-x: hidden; padding-right: 5px; } .leaflet-control-layers-selector { margin-top: 2px; position: relative; top: 1px; } .leaflet-control-layers label { display: block; font-size: 13px; font-size: 1.08333em; } .leaflet-control-layers-separator { height: 0; border-top: 1px solid #ddd; margin: 5px -10px 5px -6px; } .leaflet-default-icon-path { background-image: url(images/marker-icon.png); } .leaflet-container .leaflet-control-attribution { background: #fff; background: rgba(255, 255, 255, 0.8); margin: 0; } .leaflet-control-attribution, .leaflet-control-scale-line { padding: 0 5px; color: #333; line-height: 1.4; } .leaflet-control-attribution a { text-decoration: none; } .leaflet-control-attribution a:hover, .leaflet-control-attribution a:focus { text-decoration: underline; } .leaflet-attribution-flag { display: inline !important; vertical-align: baseline !important; width: 1em; height: 0.6669em; } .leaflet-left .leaflet-control-scale { margin-left: 5px; } .leaflet-bottom .leaflet-control-scale { margin-bottom: 5px; } .leaflet-control-scale-line { border: 2px solid #777; border-top: none; line-height: 1.1; padding: 2px 5px 1px; white-space: nowrap; -moz-box-sizing: border-box; box-sizing: border-box; background: rgba(255, 255, 255, 0.8); text-shadow: 1px 1px #fff; } .leaflet-control-scale-line:not(:first-child) { border-top: 2px solid #777; border-bottom: none; margin-top: -2px; } .leaflet-control-scale-line:not(:first-child):not(:last-child) { border-bottom: 2px solid #777; } .leaflet-touch .leaflet-control-attribution, .leaflet-touch .leaflet-control-layers, .leaflet-touch .leaflet-bar { box-shadow: none; } .leaflet-touch .leaflet-control-layers, .leaflet-touch .leaflet-bar { border: 2px solid rgba(0,0,0,0.2); background-clip: padding-box; } .leaflet-popup { position: absolute; text-align: center; margin-bottom: 20px; } .leaflet-popup-content-wrapper { padding: 1px; text-align: left; border-radius: 12px; } .leaflet-popup-content { margin: 13px 24px 13px 20px; line-height: 1.3; font-size: 13px; font-size: 1.08333em; min-height: 1px; } .leaflet-popup-content p { margin: 17px 0; margin: 1.3em 0; } .leaflet-popup-tip-container { width: 40px; height: 20px; position: absolute; left: 50%; margin-top: -1px; margin-left: -20px; overflow: hidden; pointer-events: none; } .leaflet-popup-tip { width: 17px; height: 17px; padding: 1px; margin: -10px auto 0; pointer-events: auto; -webkit-transform: rotate(45deg); -moz-transform: rotate(45deg); -ms-transform: rotate(45deg); transform: rotate(45deg); } .leaflet-popup-content-wrapper, .leaflet-popup-tip { background: white; color: #333; box-shadow: 0 3px 14px rgba(0,0,0,0.4); } .leaflet-container a.leaflet-popup-close-button { position: absolute; top: 0; right: 0; border: none; text-align: center; width: 24px; height: 24px; font: 16px/24px Tahoma, Verdana, sans-serif; color: #757575; text-decoration: none; background: transparent; } .leaflet-container a.leaflet-popup-close-button:hover, .leaflet-container a.leaflet-popup-close-button:focus { color: #585858; } .leaflet-popup-scrolled { overflow: auto; } .leaflet-oldie .leaflet-popup-content-wrapper { -ms-zoom: 1; } .leaflet-oldie .leaflet-popup-tip { width: 24px; margin: 0 auto; -ms-filter: "progid:DXImageTransform.Microsoft.Matrix(M11=0.70710678, M12=0.70710678, M21=-0.70710678, M22=0.70710678)"; filter: progid:DXImageTransform.Microsoft.Matrix(M11=0.70710678, M12=0.70710678, M21=-0.70710678, M22=0.70710678); } .leaflet-oldie .leaflet-control-zoom, .leaflet-oldie .leaflet-control-layers, .leaflet-oldie .leaflet-popup-content-wrapper, .leaflet-oldie .leaflet-popup-tip { border: 1px solid #999; } .leaflet-div-icon { background: #fff; border: 1px solid #666; } .leaflet-tooltip { position: absolute; padding: 6px; background-color: #fff; border: 1px solid #fff; border-radius: 3px; color: #222; white-space: nowrap; -webkit-user-select: none; -moz-user-select: none; -ms-user-select: none; user-select: none; pointer-events: none; box-shadow: 0 1px 3px rgba(0,0,0,0.4); } .leaflet-tooltip.leaflet-interactive { cursor: pointer; pointer-events: auto; } .leaflet-tooltip-top:before, .leaflet-tooltip-bottom:before, .leaflet-tooltip-left:before, .leaflet-tooltip-right:before { position: absolute; pointer-events: none; border: 6px solid transparent; background: transparent; content: ""; } .leaflet-tooltip-bottom { margin-top: 6px; } .leaflet-tooltip-top { margin-top: -6px; } .leaflet-tooltip-bottom:before, .leaflet-tooltip-top:before { left: 50%; margin-left: -6px; } .leaflet-tooltip-top:before { bottom: 0; margin-bottom: -12px; border-top-color: #fff; } .leaflet-tooltip-bottom:before { top: 0; margin-top: -12px; margin-left: -6px; border-bottom-color: #fff; } .leaflet-tooltip-left { margin-left: -6px; } .leaflet-tooltip-right { margin-left: 6px; } .leaflet-tooltip-left:before, .leaflet-tooltip-right:before { top: 50%; margin-top: -6px; } .leaflet-tooltip-left:before { right: 0; margin-right: -12px; border-left-color: #fff; } .leaflet-tooltip-right:before { left: 0; margin-left: -12px; border-right-color: #fff; } @media print { .leaflet-control { -webkit-print-color-adjust: exact; print-color-adjust: exact; } } </style>
+<style> .leaflet-pane, .leaflet-tile, .leaflet-marker-icon, .leaflet-marker-shadow, .leaflet-tile-container, .leaflet-pane > svg, .leaflet-pane > canvas, .leaflet-zoom-box, .leaflet-image-layer, .leaflet-layer { position: absolute; left: 0; top: 0; } .leaflet-container { overflow: hidden; } .leaflet-tile, .leaflet-marker-icon, .leaflet-marker-shadow { -webkit-user-select: none; -moz-user-select: none; user-select: none; -webkit-user-drag: none; } .leaflet-tile::selection { background: transparent; } .leaflet-safari .leaflet-tile { image-rendering: -webkit-optimize-contrast; } .leaflet-safari .leaflet-tile-container { width: 1600px; height: 1600px; -webkit-transform-origin: 0 0; } .leaflet-marker-icon, .leaflet-marker-shadow { display: block; } .leaflet-container .leaflet-overlay-pane svg { max-width: none !important; max-height: none !important; } .leaflet-container .leaflet-marker-pane img, .leaflet-container .leaflet-shadow-pane img, .leaflet-container .leaflet-tile-pane img, .leaflet-container img.leaflet-image-layer, .leaflet-container .leaflet-tile { max-width: none !important; max-height: none !important; width: auto; padding: 0; } .leaflet-container img.leaflet-tile { mix-blend-mode: plus-lighter; } .leaflet-container.leaflet-touch-zoom { -ms-touch-action: pan-x pan-y; touch-action: pan-x pan-y; } .leaflet-container.leaflet-touch-drag { -ms-touch-action: pinch-zoom; touch-action: none; touch-action: pinch-zoom; } .leaflet-container.leaflet-touch-drag.leaflet-touch-zoom { -ms-touch-action: none; touch-action: none; } .leaflet-container { -webkit-tap-highlight-color: transparent; } .leaflet-container a { -webkit-tap-highlight-color: rgba(51, 181, 229, 0.4); } .leaflet-tile { filter: inherit; visibility: hidden; } .leaflet-tile-loaded { visibility: inherit; } .leaflet-zoom-box { width: 0; height: 0; -moz-box-sizing: border-box; box-sizing: border-box; z-index: 800; } .leaflet-overlay-pane svg { -moz-user-select: none; } .leaflet-pane { z-index: 400; } .leaflet-tile-pane { z-index: 200; } .leaflet-overlay-pane { z-index: 400; } .leaflet-shadow-pane { z-index: 500; } .leaflet-marker-pane { z-index: 600; } .leaflet-tooltip-pane { z-index: 650; } .leaflet-popup-pane { z-index: 700; } .leaflet-map-pane canvas { z-index: 100; } .leaflet-map-pane svg { z-index: 200; } .leaflet-vml-shape { width: 1px; height: 1px; } .lvml { behavior: none; display: inline-block; position: absolute; } .leaflet-control { position: relative; z-index: 800; pointer-events: visiblePainted; pointer-events: auto; } .leaflet-top, .leaflet-bottom { position: absolute; z-index: 1000; pointer-events: none; } .leaflet-top { top: 0; } .leaflet-right { right: 0; } .leaflet-bottom { bottom: 0; } .leaflet-left { left: 0; } .leaflet-control { float: left; clear: both; } .leaflet-right .leaflet-control { float: right; } .leaflet-top .leaflet-control { margin-top: 10px; } .leaflet-bottom .leaflet-control { margin-bottom: 10px; } .leaflet-left .leaflet-control { margin-left: 10px; } .leaflet-right .leaflet-control { margin-right: 10px; } .leaflet-fade-anim .leaflet-popup { opacity: 0; -webkit-transition: opacity 0.2s linear; -moz-transition: opacity 0.2s linear; transition: opacity 0.2s linear; } .leaflet-fade-anim .leaflet-map-pane .leaflet-popup { opacity: 1; } .leaflet-zoom-animated { -webkit-transform-origin: 0 0; -ms-transform-origin: 0 0; transform-origin: 0 0; } svg.leaflet-zoom-animated { will-change: transform; } .leaflet-zoom-anim .leaflet-zoom-animated { -webkit-transition: -webkit-transform 0.25s cubic-bezier(0,0,0.25,1); -moz-transition: -moz-transform 0.25s cubic-bezier(0,0,0.25,1); transition: transform 0.25s cubic-bezier(0,0,0.25,1); } .leaflet-zoom-anim .leaflet-tile, .leaflet-pan-anim .leaflet-tile { -webkit-transition: none; -moz-transition: none; transition: none; } .leaflet-zoom-anim .leaflet-zoom-hide { visibility: hidden; } .leaflet-interactive { cursor: pointer; } .leaflet-grab { cursor: -webkit-grab; cursor: -moz-grab; cursor: grab; } .leaflet-crosshair, .leaflet-crosshair .leaflet-interactive { cursor: crosshair; } .leaflet-popup-pane, .leaflet-control { cursor: auto; } .leaflet-dragging .leaflet-grab, .leaflet-dragging .leaflet-grab .leaflet-interactive, .leaflet-dragging .leaflet-marker-draggable { cursor: move; cursor: -webkit-grabbing; cursor: -moz-grabbing; cursor: grabbing; } .leaflet-marker-icon, .leaflet-marker-shadow, .leaflet-image-layer, .leaflet-pane > svg path, .leaflet-tile-container { pointer-events: none; } .leaflet-marker-icon.leaflet-interactive, .leaflet-image-layer.leaflet-interactive, .leaflet-pane > svg path.leaflet-interactive, svg.leaflet-image-layer.leaflet-interactive path { pointer-events: visiblePainted; pointer-events: auto; } .leaflet-container { background: #ddd; outline-offset: 1px; } .leaflet-container a { color: #0078A8; } .leaflet-zoom-box { border: 2px dotted #38f; background: rgba(255,255,255,0.5); } .leaflet-container { font-family: "Helvetica Neue", Arial, Helvetica, sans-serif; font-size: 12px; font-size: 0.75rem; line-height: 1.5; } .leaflet-bar { box-shadow: 0 1px 5px rgba(0,0,0,0.65); border-radius: 4px; } .leaflet-bar a { background-color: #fff; border-bottom: 1px solid #ccc; width: 26px; height: 26px; line-height: 26px; display: block; text-align: center; text-decoration: none; color: black; } .leaflet-bar a, .leaflet-control-layers-toggle { background-position: 50% 50%; background-repeat: no-repeat; display: block; } .leaflet-bar a:hover, .leaflet-bar a:focus { background-color: #f4f4f4; } .leaflet-bar a:first-child { border-top-left-radius: 4px; border-top-right-radius: 4px; } .leaflet-bar a:last-child { border-bottom-left-radius: 4px; border-bottom-right-radius: 4px; border-bottom: none; } .leaflet-bar a.leaflet-disabled { cursor: default; background-color: #f4f4f4; color: #bbb; } .leaflet-touch .leaflet-bar a { width: 30px; height: 30px; line-height: 30px; } .leaflet-touch .leaflet-bar a:first-child { border-top-left-radius: 2px; border-top-right-radius: 2px; } .leaflet-touch .leaflet-bar a:last-child { border-bottom-left-radius: 2px; border-bottom-right-radius: 2px; } .leaflet-control-zoom-in, .leaflet-control-zoom-out { font: bold 18px 'Lucida Console', Monaco, monospace; text-indent: 1px; } .leaflet-touch .leaflet-control-zoom-in, .leaflet-touch .leaflet-control-zoom-out { font-size: 22px; } .leaflet-control-layers { box-shadow: 0 1px 5px rgba(0,0,0,0.4); background: #fff; border-radius: 5px; } .leaflet-control-layers-toggle { background-image: none; width: 36px; height: 36px; } .leaflet-retina .leaflet-control-layers-toggle { background-image: none; background-size: 26px 26px; } .leaflet-touch .leaflet-control-layers-toggle { width: 44px; height: 44px; } .leaflet-control-layers .leaflet-control-layers-list, .leaflet-control-layers-expanded .leaflet-control-layers-toggle { display: none; } .leaflet-control-layers-expanded .leaflet-control-layers-list { display: block; position: relative; } .leaflet-control-layers-expanded { padding: 6px 10px 6px 6px; color: #333; background: #fff; } .leaflet-control-layers-scrollbar { overflow-y: scroll; overflow-x: hidden; padding-right: 5px; } .leaflet-control-layers-selector { margin-top: 2px; position: relative; top: 1px; } .leaflet-control-layers label { display: block; font-size: 13px; font-size: 1.08333em; } .leaflet-control-layers-separator { height: 0; border-top: 1px solid #ddd; margin: 5px -10px 5px -6px; } .leaflet-default-icon-path { background-image: none; } .leaflet-container .leaflet-control-attribution { background: #fff; background: rgba(255, 255, 255, 0.8); margin: 0; } .leaflet-control-attribution, .leaflet-control-scale-line { padding: 0 5px; color: #333; line-height: 1.4; } .leaflet-control-attribution a { text-decoration: none; } .leaflet-control-attribution a:hover, .leaflet-control-attribution a:focus { text-decoration: underline; } .leaflet-attribution-flag { display: inline !important; vertical-align: baseline !important; width: 1em; height: 0.6669em; } .leaflet-left .leaflet-control-scale { margin-left: 5px; } .leaflet-bottom .leaflet-control-scale { margin-bottom: 5px; } .leaflet-control-scale-line { border: 2px solid #777; border-top: none; line-height: 1.1; padding: 2px 5px 1px; white-space: nowrap; -moz-box-sizing: border-box; box-sizing: border-box; background: rgba(255, 255, 255, 0.8); text-shadow: 1px 1px #fff; } .leaflet-control-scale-line:not(:first-child) { border-top: 2px solid #777; border-bottom: none; margin-top: -2px; } .leaflet-control-scale-line:not(:first-child):not(:last-child) { border-bottom: 2px solid #777; } .leaflet-touch .leaflet-control-attribution, .leaflet-touch .leaflet-control-layers, .leaflet-touch .leaflet-bar { box-shadow: none; } .leaflet-touch .leaflet-control-layers, .leaflet-touch .leaflet-bar { border: 2px solid rgba(0,0,0,0.2); background-clip: padding-box; } .leaflet-popup { position: absolute; text-align: center; margin-bottom: 20px; } .leaflet-popup-content-wrapper { padding: 1px; text-align: left; border-radius: 12px; } .leaflet-popup-content { margin: 13px 24px 13px 20px; line-height: 1.3; font-size: 13px; font-size: 1.08333em; min-height: 1px; } .leaflet-popup-content p { margin: 17px 0; margin: 1.3em 0; } .leaflet-popup-tip-container { width: 40px; height: 20px; position: absolute; left: 50%; margin-top: -1px; margin-left: -20px; overflow: hidden; pointer-events: none; } .leaflet-popup-tip { width: 17px; height: 17px; padding: 1px; margin: -10px auto 0; pointer-events: auto; -webkit-transform: rotate(45deg); -moz-transform: rotate(45deg); -ms-transform: rotate(45deg); transform: rotate(45deg); } .leaflet-popup-content-wrapper, .leaflet-popup-tip { background: white; color: #333; box-shadow: 0 3px 14px rgba(0,0,0,0.4); } .leaflet-container a.leaflet-popup-close-button { position: absolute; top: 0; right: 0; border: none; text-align: center; width: 24px; height: 24px; font: 16px/24px Tahoma, Verdana, sans-serif; color: #757575; text-decoration: none; background: transparent; } .leaflet-container a.leaflet-popup-close-button:hover, .leaflet-container a.leaflet-popup-close-button:focus { color: #585858; } .leaflet-popup-scrolled { overflow: auto; } .leaflet-oldie .leaflet-popup-content-wrapper { -ms-zoom: 1; } .leaflet-oldie .leaflet-popup-tip { width: 24px; margin: 0 auto; -ms-filter: "progid:DXImageTransform.Microsoft.Matrix(M11=0.70710678, M12=0.70710678, M21=-0.70710678, M22=0.70710678)"; filter: progid:DXImageTransform.Microsoft.Matrix(M11=0.70710678, M12=0.70710678, M21=-0.70710678, M22=0.70710678); } .leaflet-oldie .leaflet-control-zoom, .leaflet-oldie .leaflet-control-layers, .leaflet-oldie .leaflet-popup-content-wrapper, .leaflet-oldie .leaflet-popup-tip { border: 1px solid #999; } .leaflet-div-icon { background: #fff; border: 1px solid #666; } .leaflet-tooltip { position: absolute; padding: 6px; background-color: #fff; border: 1px solid #fff; border-radius: 3px; color: #222; white-space: nowrap; -webkit-user-select: none; -moz-user-select: none; -ms-user-select: none; user-select: none; pointer-events: none; box-shadow: 0 1px 3px rgba(0,0,0,0.4); } .leaflet-tooltip.leaflet-interactive { cursor: pointer; pointer-events: auto; } .leaflet-tooltip-top:before, .leaflet-tooltip-bottom:before, .leaflet-tooltip-left:before, .leaflet-tooltip-right:before { position: absolute; pointer-events: none; border: 6px solid transparent; background: transparent; content: ""; } .leaflet-tooltip-bottom { margin-top: 6px; } .leaflet-tooltip-top { margin-top: -6px; } .leaflet-tooltip-bottom:before, .leaflet-tooltip-top:before { left: 50%; margin-left: -6px; } .leaflet-tooltip-top:before { bottom: 0; margin-bottom: -12px; border-top-color: #fff; } .leaflet-tooltip-bottom:before { top: 0; margin-top: -12px; margin-left: -6px; border-bottom-color: #fff; } .leaflet-tooltip-left { margin-left: -6px; } .leaflet-tooltip-right { margin-left: 6px; } .leaflet-tooltip-left:before, .leaflet-tooltip-right:before { top: 50%; margin-top: -6px; } .leaflet-tooltip-left:before { right: 0; margin-right: -12px; border-left-color: #fff; } .leaflet-tooltip-right:before { left: 0; margin-left: -12px; border-right-color: #fff; } @media print { .leaflet-control { -webkit-print-color-adjust: exact; print-color-adjust: exact; } } </style>
 <style>
 /* Layout: one playful app column for the flow; results widen to list + map on laptops. Visual idea: receipts, coins and ticket stubs. */
 :root {
@@ -228,6 +228,7 @@ select { flex: none; padding: 8px 12px; font-size: 15px; border-radius: 999px; c
 </style>
 
 <style>
+[hidden] { display: none !important; }
 .invite { display: grid; gap: 12px; }
 .linkbox { font: 600 14px var(--font-mono); background: var(--bg); border: 2px dashed var(--line); border-radius: 14px; padding: 12px 14px; word-break: break-all; user-select: all; }
 .people { display: flex; flex-wrap: wrap; gap: 8px; }
@@ -241,6 +242,29 @@ select { flex: none; padding: 8px 12px; font-size: 15px; border-radius: 999px; c
 .invited { background: var(--surface); border: 2px solid var(--line); border-radius: 18px; padding: 14px 16px; display: grid; gap: 4px; }
 .invited b { font-family: var(--font-display); font-size: 20px; }
 .err { color: var(--coral); font-weight: 600; font-size: 14px; margin: 8px 0 0; }
+.budget-card { display: grid; gap: 18px; text-align: center; }
+.amount-display { display: inline-flex; align-items: baseline; justify-content: center; gap: 2px; font: 700 64px var(--font-mono); letter-spacing: -0.04em; line-height: 1; }
+.amount-display span { font-size: 40px; color: var(--muted); }
+.amount-display input { width: 4.2ch; font: inherit; letter-spacing: inherit; color: var(--ink); background: transparent; border: 0; border-bottom: 3px dashed var(--line); text-align: center; padding: 0; -moz-appearance: textfield; }
+.amount-display input::-webkit-outer-spin-button, .amount-display input::-webkit-inner-spin-button { -webkit-appearance: none; margin: 0; }
+.amount-display input:focus { outline: none; border-bottom-color: var(--coral); }
+.per { font-size: 14px; color: var(--muted); margin-top: -10px; }
+input[type="range"] { -webkit-appearance: none; appearance: none; width: 100%; height: 14px; border-radius: 99px; border: 2px solid var(--line); cursor: pointer;
+  background: linear-gradient(90deg, var(--hi) 0 var(--fill, 30%), var(--surface) var(--fill, 30%) 100%); }
+input[type="range"]::-webkit-slider-thumb { -webkit-appearance: none; width: 34px; height: 34px; border-radius: 50%; background: var(--coral); border: 3px solid var(--line); box-shadow: 2px 2px 0 var(--shadow); }
+input[type="range"]::-moz-range-thumb { width: 30px; height: 30px; border-radius: 50%; background: var(--coral); border: 3px solid var(--line); box-shadow: 2px 2px 0 var(--shadow); }
+input[type="range"]:focus-visible { outline: 3px solid var(--sky); outline-offset: 4px; }
+.ticks { display: flex; justify-content: space-between; font: 600 12px var(--font-mono); color: var(--muted); margin-top: -8px; }
+.quick { justify-content: center; }
+.vibe { font-family: var(--font-display); font-weight: 700; font-size: 18px; }
+.facets { display: flex; flex-wrap: wrap; gap: 8px; }
+.facets:empty { display: none; }
+.facets .chip { font-size: 14px; padding: 6px 12px; }
+.facets .count { font: 600 12px var(--font-mono); color: var(--muted); margin-left: 4px; }
+.facets .chip[aria-pressed="true"] .count { color: var(--hi-ink); }
+.openbadge { font-weight: 700; }
+.openbadge.yes { color: var(--mint); }
+.openbadge.no { color: var(--coral); }
 </style>
 
 <canvas id="confetti" aria-hidden="true"></canvas>
@@ -270,7 +294,7 @@ select { flex: none; padding: 8px 12px; font-size: 15px; border-radius: 999px; c
       <div class="example-wrap" aria-label="Example result">
         <span class="example-label">Example result</span>
         <div class="ticket">
-          <div class="stub-row"><span>4 friends joined · within 5 mi</span><span>budget: <b>under $15</b></span></div>
+          <div class="stub-row"><span>4 friends joined · within 5 mi</span><span>budget: <b>up to $35</b></span></div>
           <div class="perf"></div>
           <div class="ticket-head"><h3>A neighborhood café</h3><span class="price">~$6</span></div>
           <div class="meta"><span><b>0.8 mi</b> away</span><span>Coffee</span><span>open till 6pm</span></div>
@@ -335,10 +359,17 @@ select { flex: none; padding: 8px 12px; font-size: 15px; border-radius: 999px; c
       <div class="center">
         <div class="step">Private</div>
         <h2>Hey <span class="mark" id="budget-name">you</span>, what can you spend?</h2>
-        <p class="hint">Per person, for this hangout. Nobody sees your answer, not even the person who made the plan.</p>
+        <p class="hint">Nobody sees your answer, not even the person who made the plan.</p>
       </div>
-      <div class="coins" id="coins" role="group" aria-label="Your budget"></div>
-      <button class="btn big wide coral" id="lock" type="button" disabled><span class="emo" aria-hidden="true">🔒</span>Lock it in</button>
+      <div class="card budget-card">
+        <label class="amount-display" for="amt-input"><span>$</span><input id="amt-input" type="number" inputmode="numeric" min="0" max="500" step="1" value="30" aria-label="Your budget in dollars"></label>
+        <div class="per">per person · type it or slide</div>
+        <input id="amt-slider" type="range" min="0" max="100" step="1" value="15" aria-label="Budget slider, $0 to $500">
+        <div class="ticks" aria-hidden="true"><span>$0</span><span>$50</span><span>$100</span><span>$300</span><span>$500</span></div>
+        <div class="chips quick" id="quick" role="group" aria-label="Quick picks"></div>
+        <div class="vibe" id="amt-vibe" aria-live="polite"></div>
+      </div>
+      <button class="btn big wide coral" id="lock" type="button"><span class="emo" aria-hidden="true">🔒</span>Lock it in</button>
       <p class="err" id="lock-err" hidden></p>
     </div>
   </section>
@@ -386,6 +417,7 @@ select { flex: none; padding: 8px 12px; font-size: 15px; border-radius: 999px; c
       </div>
       <div id="votebox"></div>
       <div class="cats" id="cats" role="group" aria-label="Categories"></div>
+      <div class="facets" id="facets" role="group" aria-label="Filters"></div>
       <div class="filters">
         <div class="grp"><span class="k">Area</span><button class="area-btn" id="area-btn" type="button">Near you</button></div>
         <div class="grp" role="group" aria-label="Distance"><span class="k">Within</span><span class="chips" id="dists2" style="gap:8px"></span></div>
@@ -453,21 +485,21 @@ const SUPABASE_KEY = "sb_publishable_wNfAJEJs_eoCjoyU12GFTA__fzSicUi";
   const NOMINATIM = "https://nominatim.openstreetmap.org/search";
   const CONFIGURED = /^https:\/\//.test(SUPABASE_URL) && !/PASTE/.test(SUPABASE_KEY);
 
-  const TIERS = [
-    { max: 0,   amt: "$0",    label: "Free",      what: "Free stuff only",    emo: "🆓" },
-    { max: 15,  amt: "$15",   label: "Under $15", what: "Keeping it cheap",   emo: "🪙" },
-    { max: 30,  amt: "$30",   label: "Under $30", what: "A little fun money", emo: "💵" },
-    { max: 60,  amt: "$60",   label: "Under $60", what: "Can splurge a bit",  emo: "💸" },
-    { max: 1e9, amt: "$100+", label: "$100+",     what: "Treat day",          emo: "👑" },
-  ];
+  const QUICK = [0, 15, 30, 60, 100];
+  const MAX_AMT = 500;
+  // Slider position (0-100) <-> dollars: first half covers $0-100 finely, second half $100-500.
+  const posToAmt = (p) => p <= 50 ? Math.round(p * 2) : Math.min(MAX_AMT, Math.round((100 + (p - 50) * 8) / 5) * 5);
+  const amtToPos = (a) => a <= 100 ? a / 2 : 50 + (a - 100) / 8;
+  const vibeFor = (a) => a === 0 ? "🆓 Free stuff only" : a <= 15 ? "🪙 Keeping it cheap" : a <= 40 ? "💵 A little fun money" : a <= 100 ? "💸 Can splurge a bit" : a < 500 ? "👑 Treat day" : "🚀 Sky's the limit";
   const DISTS = [1, 3, 5, 10];
   const CATS = [
-    { id: "free", label: "Free hangouts", noun: ["free spot","free spots"], emo: "🌳", tags: [["leisure","park"],["leisure","garden"],["tourism","viewpoint"],["natural","beach"],["amenity","library"]] },
-    { id: "coffee", label: "Coffee", noun: ["coffee spot","coffee spots"], emo: "☕", tags: [["amenity","cafe"]] },
+    { id: "free", label: "Free activities", noun: ["free spot","free spots"], emo: "🌳", tags: [["leisure","park"],["leisure","garden"],["tourism","viewpoint"],["natural","beach"],["amenity","library"],["tourism","picnic_site"]] },
+    { id: "coffee", label: "Cafés", noun: ["café","cafés"], emo: "☕", tags: [["amenity","cafe"]] },
+    { id: "arts", label: "Arts & crafts", noun: ["arts spot","arts spots"], emo: "🎨", tags: [["craft","pottery"],["amenity","arts_centre"],["shop","craft"],["shop","art"],["tourism","gallery"]] },
     { id: "eats", label: "Cheap eats", noun: ["place to eat","places to eat"], emo: "🌮", tags: [["amenity","fast_food"],["amenity","ice_cream"],["shop","bakery"],["amenity","food_court"]] },
-    { id: "activities", label: "Activities", noun: ["activity","activities"], emo: "🎳", tags: [["leisure","bowling_alley"],["leisure","miniature_golf"],["leisure","escape_game"],["leisure","amusement_arcade"],["amenity","cinema"],["sport","climbing"]] },
-    { id: "culture", label: "Culture", noun: ["culture spot","culture spots"], emo: "🎨", tags: [["tourism","museum"],["tourism","gallery"],["shop","books"],["amenity","arts_centre"]] },
     { id: "food", label: "Restaurants", noun: ["restaurant","restaurants"], emo: "🍜", tags: [["amenity","restaurant"]] },
+    { id: "activities", label: "Activities", noun: ["activity","activities"], emo: "🎳", tags: [["leisure","bowling_alley"],["leisure","miniature_golf"],["leisure","escape_game"],["leisure","amusement_arcade"],["amenity","cinema"],["sport","climbing"],["leisure","trampoline_park"],["sport","karting"]] },
+    { id: "culture", label: "Culture", noun: ["culture spot","culture spots"], emo: "🏛️", tags: [["tourism","museum"],["amenity","theatre"],["shop","books"]] },
     { id: "ideas", label: "Free ideas", emo: "💡", tags: null },
   ];
   const KIND = {
@@ -476,8 +508,11 @@ const SUPABASE_KEY = "sb_publishable_wNfAJEJs_eoCjoyU12GFTA__fzSicUi";
     "shop=bakery": ["Bakery", 6], "amenity=food_court": ["Food court", 12], "leisure=bowling_alley": ["Bowling", 20],
     "leisure=miniature_golf": ["Mini golf", 15], "leisure=escape_game": ["Escape room", 35], "leisure=amusement_arcade": ["Arcade", 15],
     "amenity=cinema": ["Movies", 16], "sport=climbing": ["Climbing", 28], "tourism=museum": ["Museum", 15], "tourism=gallery": ["Gallery", 0],
-    "shop=books": ["Bookstore", 0], "amenity=arts_centre": ["Arts center", 10], "amenity=restaurant": ["Restaurant", 22],
+    "shop=books": ["Bookstore", 0], "amenity=arts_centre": ["Arts center", 20], "amenity=restaurant": ["Restaurant", 30],
+    "tourism=picnic_site": ["Picnic spot", 0], "craft=pottery": ["Pottery studio", 30], "shop=craft": ["Craft store", 15], "shop=art": ["Art shop", 15],
+    "leisure=trampoline_park": ["Trampoline park", 25], "sport=karting": ["Go-karts", 30], "amenity=theatre": ["Theater", 40],
   };
+  const FANCY_CUISINE = /sushi|steak|french|omakase|fine_dining|seafood/;
   const CHEAP_CUISINE = /taco|mexican|pizza|burger|noodle|ramen|pho|vietnamese|sandwich|dumpling|thai|indian/;
   const IDEAS = [
     { t: "Sunset picnic", d: "Everyone brings one snack. Find a hill, watch the sky.", cost: 0 },
@@ -505,7 +540,7 @@ const SUPABASE_KEY = "sb_publishable_wNfAJEJs_eoCjoyU12GFTA__fzSicUi";
   const DEVICE = deviceId();
 
   const state = {
-    code: null, status: null, myName: store.get("lowkey.name") || "", draftTier: null, myTier: null,
+    code: null, status: null, myName: store.get("lowkey.name") || "", draftAmt: 30, myAmt: null, facets: new Set(),
     // create form
     center: null, areaLabel: "", radius: 5,
     // results (local view filters)
@@ -553,7 +588,7 @@ const SUPABASE_KEY = "sb_publishable_wNfAJEJs_eoCjoyU12GFTA__fzSicUi";
     });
   }
   function showErr(id, msg) { const el = $(id); el.textContent = msg; el.hidden = !msg; }
-  const tierLabel = (t) => t === 0 ? "Free" : t === TIERS.length - 1 ? "Sky's the limit" : TIERS[t].label;
+  const amountLabel = (a) => a == null ? "…" : a === 0 ? "Free" : a >= MAX_AMT ? "$500+" : `Up to $${a}`;
 
   // ---------- backend (Supabase database functions) ----------
   async function rpc(fn, args) {
@@ -668,25 +703,29 @@ const SUPABASE_KEY = "sb_publishable_wNfAJEJs_eoCjoyU12GFTA__fzSicUi";
 
   // ---------- budget ----------
   function openBudget() {
-    state.draftTier = state.myTier; $("budget-name").textContent = state.myName; showErr("lock-err", "");
-    renderCoins(); show("budget");
+    state.draftAmt = state.myAmt ?? 30; $("budget-name").textContent = state.myName; showErr("lock-err", "");
+    renderBudget(true); show("budget");
   }
-  function renderCoins() {
-    const c = $("coins"); c.innerHTML = "";
-    TIERS.forEach((t, i) => {
-      const b = document.createElement("button"); b.type = "button"; b.className = "coin";
-      b.setAttribute("aria-pressed", String(state.draftTier === i)); b.setAttribute("aria-label", `${t.label}: ${t.what}`);
-      b.innerHTML = `<span class="emo" aria-hidden="true">${t.emo}</span><span class="amt">${t.amt}</span><span class="what">${t.what}</span>`;
-      b.addEventListener("click", () => { state.draftTier = i; renderCoins(); });
-      c.appendChild(b);
-    });
-    $("lock").disabled = state.draftTier === null;
+  function renderBudget(syncInput) {
+    const a = state.draftAmt;
+    if (syncInput) $("amt-input").value = a;
+    const pos = amtToPos(a); $("amt-slider").value = pos; $("amt-slider").style.setProperty("--fill", pos + "%");
+    $("amt-vibe").textContent = vibeFor(a);
+    chipRow($("quick"), QUICK.map(q => ({ id: q, label: q === 0 ? "Free" : "$" + q })), id => a === id, id => { state.draftAmt = id; renderBudget(true); }, true);
+    $("lock").disabled = false;
   }
+  $("amt-slider").addEventListener("input", (e) => { state.draftAmt = posToAmt(+e.target.value); renderBudget(true); });
+  $("amt-input").addEventListener("input", (e) => {
+    const v = parseInt(e.target.value, 10);
+    state.draftAmt = isNaN(v) ? 0 : Math.max(0, Math.min(MAX_AMT, v));
+    renderBudget(false);
+  });
+  $("amt-input").addEventListener("blur", () => { $("amt-input").value = state.draftAmt; });
   $("lock").addEventListener("click", async () => {
     $("lock").disabled = true; showErr("lock-err", "");
     try {
-      await rpc("join_plan", { p_code: state.code, p_device: DEVICE, p_name: state.myName, p_tier: state.draftTier });
-      state.myTier = state.draftTier; store.set("lowkey.tier." + state.code, String(state.myTier));
+      await rpc("join_plan", { p_code: state.code, p_device: DEVICE, p_name: state.myName, p_amount: state.draftAmt });
+      state.myAmt = state.draftAmt; store.set("lowkey.amt." + state.code, String(state.myAmt));
       burst(50); toast("Locked in. Your secret's safe 🔐");
       await refresh(); renderRoom(); show("room");
     } catch (e) { showErr("lock-err", friendlyError(e)); $("lock").disabled = false; }
@@ -729,7 +768,7 @@ const SUPABASE_KEY = "sb_publishable_wNfAJEJs_eoCjoyU12GFTA__fzSicUi";
       if (current === "room") renderRoom();
       if (current === "results") {
         renderZone(); renderVote();
-        if (prev && prev.tier !== s.tier) loadResults();
+        if (prev && prev.amount !== s.amount) loadResults();
       }
       handleStretchResult(prev, s);
     } catch { /* keep last known state; next poll retries */ }
@@ -745,7 +784,7 @@ const SUPABASE_KEY = "sb_publishable_wNfAJEJs_eoCjoyU12GFTA__fzSicUi";
   function renderVote() {
     const s = state.status; const box = $("votebox"); box.innerHTML = "";
     if (!s || !s.stretch_open) return;
-    const next = TIERS[Math.min(s.tier + 1, 4)].label.replace("Under ", "");
+    const next = "$" + s.stretch_to;
     const card = document.createElement("div"); card.className = "votecard";
     if (s.me_voted) {
       card.innerHTML = `<b>🗳️ Stretch vote in progress</b><span class="hint" style="margin:0">You voted. Waiting for the others: ${s.votes_in} of ${s.count} in. Nobody will know who said what.</span>`;
@@ -767,8 +806,8 @@ const SUPABASE_KEY = "sb_publishable_wNfAJEJs_eoCjoyU12GFTA__fzSicUi";
     if (s.stretch_round <= seen) return;
     state.seenResultRound = s.stretch_round; store.set(key, String(s.stretch_round));
     if (!prev) return; // don't announce old results on first load
-    if (s.stretch_result === "passed") { toast(`Everyone's in! Budget is now ${tierLabel(s.tier)} 🥳`); burst(120); }
-    else toast(`Staying at ${tierLabel(s.tier)}. Nobody knows who said no 🤝`);
+    if (s.stretch_result === "passed") { toast(`Everyone's in! Budget is now ${amountLabel(s.amount).toLowerCase()} 🥳`); burst(120); }
+    else toast(`Staying at ${amountLabel(s.amount).toLowerCase()}. Nobody knows who said no 🤝`);
   }
   $("stretch").addEventListener("click", async () => {
     try { await rpc("start_stretch", { p_code: state.code }); await refresh(); toast("Vote started. Everyone votes on their own phone."); }
@@ -784,7 +823,9 @@ const SUPABASE_KEY = "sb_publishable_wNfAJEJs_eoCjoyU12GFTA__fzSicUi";
   function estimate(key, tags) {
     let [label, cost] = KIND[key];
     if (key === "tourism=museum" && (tags.fee === "no" || tags.fee === "free")) cost = 0;
-    if (key === "amenity=restaurant" && CHEAP_CUISINE.test((tags.cuisine || "").toLowerCase())) cost = 14;
+    const cuisine = (tags.cuisine || "").toLowerCase();
+    if (key === "amenity=restaurant" && CHEAP_CUISINE.test(cuisine)) cost = 15;
+    else if (key === "amenity=restaurant" && FANCY_CUISINE.test(cuisine)) cost = 55;
     if (tags.fee === "no" && cost > 0 && key !== "amenity=cafe") cost = 0;
     return { label, cost };
   }
@@ -797,7 +838,8 @@ const SUPABASE_KEY = "sb_publishable_wNfAJEJs_eoCjoyU12GFTA__fzSicUi";
       const key = kindOf(t); if (!key || !allowed.has(key)) continue;
       const id = t.name.toLowerCase() + "|" + key; if (seen.has(id)) continue; seen.add(id);
       const { label, cost } = estimate(key, t);
-      out.push({ name: t.name, kind: label, cost, lat, lon, dist: miles(c, { lat, lon }), addr: [t["addr:housenumber"], t["addr:street"]].filter(Boolean).join(" "), hours: t.opening_hours || "" });
+      out.push({ name: t.name, kind: label, cost, lat, lon, dist: miles(c, { lat, lon }), addr: [t["addr:housenumber"], t["addr:street"]].filter(Boolean).join(" "), hours: t.opening_hours || "",
+        flags: { outdoor: t.outdoor_seating === "yes", wifi: /^(yes|wlan|wifi|free)$/.test(t.internet_access || ""), wheelchair: t.wheelchair === "yes", veg: /^(yes|only)$/.test(t["diet:vegetarian"] || "") } });
     }
     return out;
   }
@@ -825,7 +867,69 @@ const SUPABASE_KEY = "sb_publishable_wNfAJEJs_eoCjoyU12GFTA__fzSicUi";
       culture: [["Sample museum","Museum",15],["Sample bookstore","Bookstore",0]],
       food: [["Sample noodle house","Restaurant",14],["Sample bistro","Restaurant",22]],
     }[cat.id] || [];
-    return names.map(([name, kind, cost], i) => { const lat = c.lat + Math.sin(i * 2.1) * 0.01 * (i + 1), lon = c.lon + Math.cos(i * 2.1) * 0.012 * (i + 1); return { name, kind, cost, lat, lon, dist: miles(c, { lat, lon }), addr: "", hours: "", sample: true }; });
+    return names.map(([name, kind, cost], i) => { const lat = c.lat + Math.sin(i * 2.1) * 0.01 * (i + 1), lon = c.lon + Math.cos(i * 2.1) * 0.012 * (i + 1); return { name, kind, cost, lat, lon, dist: miles(c, { lat, lon }), addr: "", hours: "", sample: true, flags: {} }; });
+  }
+
+  // ---------- Google Maps-style filters ----------
+  const FACETS = {
+    open:       { label: "Open now",              emo: "🕒", test: (p) => openNow(p.hours) === true },
+    free:       { label: "Free only",             emo: "🆓", test: (p) => p.cost === 0 },
+    outdoor:    { label: "Outdoor seating",       emo: "☀️", test: (p) => p.flags.outdoor },
+    wifi:       { label: "Wi-Fi",                 emo: "📶", test: (p) => p.flags.wifi },
+    wheelchair: { label: "Wheelchair accessible", emo: "♿", test: (p) => p.flags.wheelchair },
+    veg:        { label: "Vegetarian options",    emo: "🥗", test: (p) => p.flags.veg },
+  };
+  function renderFacets(pool) {
+    const box = $("facets"); box.innerHTML = "";
+    Object.entries(FACETS).forEach(([id, f]) => {
+      const n = pool.filter(f.test).length;
+      const on = state.facets.has(id);
+      if (!on && (n === 0 || (id === "free" && n === pool.length))) return;
+      const b = document.createElement("button"); b.type = "button"; b.className = "chip";
+      b.setAttribute("aria-pressed", String(on));
+      b.innerHTML = `<span class="emo" aria-hidden="true">${f.emo}</span> ${esc(f.label)}<span class="count">${n}</span>`;
+      b.addEventListener("click", () => { on ? state.facets.delete(id) : state.facets.add(id); loadResults(); });
+      box.appendChild(b);
+    });
+  }
+  // Minimal OpenStreetMap opening_hours reader: true/false, or null when the format is unusual.
+  const DAYS = ["Su","Mo","Tu","We","Th","Fr","Sa"];
+  function expandDays(spec) {
+    const out = new Set();
+    for (const part of spec.split(",")) {
+      const [a, b] = part.trim().split(/\s*-\s*/); const i = DAYS.indexOf(a); if (i < 0) return null;
+      if (!b) { out.add(i); continue; }
+      const j = DAYS.indexOf(b); if (j < 0) return null;
+      for (let k = i; ; k = (k + 1) % 7) { out.add(k); if (k === j) break; }
+    }
+    return out;
+  }
+  function openNow(h, now = new Date()) {
+    if (!h) return null; h = h.trim(); if (h === "24/7") return true;
+    const day = now.getDay(), prev = (day + 6) % 7, mins = now.getHours() * 60 + now.getMinutes();
+    let today = null, yday = null, parsedAny = false;
+    for (let rule of h.split(";")) {
+      rule = rule.trim(); if (!rule || /^PH\b/.test(rule)) continue;
+      const m = rule.match(/^((?:Mo|Tu|We|Th|Fr|Sa|Su)(?:\s*[-,]\s*(?:Mo|Tu|We|Th|Fr|Sa|Su))*)?\s*(.*)$/);
+      if (!m) return null;
+      const days = m[1] ? expandDays(m[1]) : new Set([0,1,2,3,4,5,6]); if (!days) return null;
+      const spec = m[2].trim(); let ranges;
+      if (/^(off|closed)$/i.test(spec)) ranges = [];
+      else {
+        ranges = [];
+        for (const part of spec.split(",")) {
+          const t = part.trim().match(/^(\d{1,2}):(\d{2})\s*-\s*(\d{1,2}):(\d{2})\+?$/); if (!t) return null;
+          ranges.push([+t[1] * 60 + +t[2], +t[3] * 60 + +t[4]]);
+        }
+      }
+      parsedAny = true;
+      if (days.has(day)) today = ranges;
+      if (days.has(prev)) yday = ranges;
+    }
+    if (!parsedAny) return null;
+    const inToday = (today || []).some(([a, b]) => b > a ? mins >= a && mins < b : mins >= a);
+    const fromYday = (yday || []).some(([a, b]) => b <= a && mins < b);
+    return inToday || fromYday;
   }
 
   // ---------- map ----------
@@ -862,15 +966,15 @@ const SUPABASE_KEY = "sb_publishable_wNfAJEJs_eoCjoyU12GFTA__fzSicUi";
   // ---------- results ----------
   function renderZone() {
     const s = state.status; if (!s) return;
-    $("zone-amt").textContent = tierLabel(s.tier);
+    $("zone-amt").textContent = amountLabel(s.amount);
     $("res-live").textContent = `Live · ${s.count} joined`;
     $("res-title").textContent = s.title;
-    const canStretch = s.tier < TIERS.length - 1 && !s.stretch_open;
+    const canStretch = s.amount != null && s.amount < MAX_AMT && !s.stretch_open;
     $("stretch").hidden = !canStretch;
-    if (canStretch) $("stretch-label").textContent = `Stretch to ${TIERS[s.tier + 1].label.replace("Under ", "")}?`;
+    if (canStretch) $("stretch-label").textContent = `Stretch to $${s.stretch_to}?`;
   }
   function renderFilters() {
-    chipRow($("cats"), CATS, id => state.cat === id, id => { state.cat = id; renderFilters(); loadResults(); });
+    chipRow($("cats"), CATS, id => state.cat === id, id => { state.cat = id; state.facets.clear(); renderFilters(); loadResults(); });
     chipRow($("dists2"), DISTS.map(d => ({ id: d, label: d + " mi" })), id => state.viewRadius === id, id => { state.viewRadius = id; renderFilters(); loadResults(); }, true);
     $("sort").value = state.sort; $("area-btn").textContent = state.viewLabel;
     const placeMode = !!CATS.find(c => c.id === state.cat).tags;
@@ -885,14 +989,15 @@ const SUPABASE_KEY = "sb_publishable_wNfAJEJs_eoCjoyU12GFTA__fzSicUi";
   }
   function ticketFor(p, i) {
     const el = document.createElement("article"); el.className = "ticket";
-    const hours = p.hours ? `<span>${esc(p.hours.length > 34 ? p.hours.slice(0, 34) + "…" : p.hours)}</span>` : "";
+    const on = openNow(p.hours);
+    const hours = on === true ? `<span class="openbadge yes">Open now</span>` : on === false ? `<span class="openbadge no">Closed now</span>` : p.hours ? `<span>${esc(p.hours.length > 34 ? p.hours.slice(0, 34) + "…" : p.hours)}</span>` : "";
     const where = p.addr ? `<span>${esc(p.addr)}</span>` : "";
     const mapsUrl = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(p.name + " " + p.lat.toFixed(5) + "," + p.lon.toFixed(5))}`;
     el.innerHTML = `
       <div class="ticket-head"><h3>${esc(p.name)}</h3><span class="price">${p.cost === 0 ? "Free" : "~$" + p.cost}</span></div>
       <div class="meta"><span><b>${p.dist < 0.1 ? "<0.1" : p.dist.toFixed(1)} mi</b></span><span>${esc(p.kind)}</span>${where}${hours}</div>
       <div class="perf"></div>
-      <div class="tags"><span class="tag">fits everyone</span>${p.cost === 0 ? '<span class="tag">free</span>' : ""}${p.sample ? '<span class="tag">sample</span>' : ""}</div>
+      <div class="tags"><span class="tag">fits everyone</span>${p.cost === 0 ? '<span class="tag">free</span>' : ""}${p.flags.outdoor ? '<span class="tag">outdoor seating</span>' : ""}${p.flags.wifi ? '<span class="tag">Wi-Fi</span>' : ""}${p.flags.wheelchair ? '<span class="tag">accessible</span>' : ""}${p.flags.veg ? '<span class="tag">vegetarian options</span>' : ""}${p.sample ? '<span class="tag">sample</span>' : ""}</div>
       <div class="actions">
         ${p.sample ? "" : `<a href="${mapsUrl}" target="_blank" rel="noopener">Directions ↗</a>`}
         <button class="btn ghost sm show-map" type="button">Show on map</button>
@@ -912,10 +1017,11 @@ const SUPABASE_KEY = "sb_publishable_wNfAJEJs_eoCjoyU12GFTA__fzSicUi";
   }
   async function loadResults() {
     const req = ++state.req, s = state.status; if (!s) return;
-    const cat = CATS.find(c => c.id === state.cat), cap = TIERS[s.tier].max;
+    const cat = CATS.find(c => c.id === state.cat), cap = s.amount >= MAX_AMT ? Infinity : (s.amount ?? 0);
     const list = $("list"), status = $("status");
     $("sample-banner").hidden = true;
     if (!cat.tags) {
+      $("facets").innerHTML = "";
       const ideas = IDEAS.filter(i => i.cost <= cap);
       list.innerHTML = ""; ideas.forEach(i => list.appendChild(ideaTicket(i)));
       status.innerHTML = `<span><b>${ideas.length} ${ideas.length === 1 ? "idea" : "ideas"}</b> that fit the budget. No location needed.</span>`;
@@ -927,19 +1033,23 @@ const SUPABASE_KEY = "sb_publishable_wNfAJEJs_eoCjoyU12GFTA__fzSicUi";
     if (req !== state.req) return;
     if (places === null) { $("sample-banner").hidden = false; places = samplePlaces(cat, state.viewCenter); }
     const total = places.filter(p => p.dist <= state.viewRadius);
-    let fit = total.filter(p => p.cost <= cap);
+    const inBudget = total.filter(p => p.cost <= cap);
+    renderFacets(inBudget);
+    let fit = inBudget.filter(p => [...state.facets].every(f => FACETS[f].test(p)));
     if (state.sort === "near") fit.sort((a, b) => a.dist - b.dist);
     if (state.sort === "cheap") fit.sort((a, b) => a.cost - b.cost || a.dist - b.dist);
     if (state.sort === "az") fit.sort((a, b) => a.name.localeCompare(b.name));
     fit = fit.slice(0, 30);
-    const hidden = total.length - total.filter(p => p.cost <= cap).length;
+    const hidden = total.length - inBudget.length;
     if (!fit.length) {
-      list.innerHTML = `<div class="empty">No ${cat.noun[1]} in budget within ${state.viewRadius} mi.<br>Try a bigger distance, another category, or a stretch vote.</div>`;
+      list.innerHTML = state.facets.size
+        ? `<div class="empty">No ${cat.noun[1]} match those filters.<br>Turn a filter off or try a bigger distance.</div>`
+        : `<div class="empty">No ${cat.noun[1]} in budget within ${state.viewRadius} mi.<br>Try a bigger distance, another category, or a stretch vote.</div>`;
       status.innerHTML = hidden ? `<span>${hidden} nearby ${hidden === 1 ? "spot is" : "spots are"} over budget.</span>` : "";
       drawMap([]); return;
     }
     fit.forEach((p, i) => list.appendChild(ticketFor(p, i)));
-    status.innerHTML = `<span><b>${fit.length} ${cat.noun[fit.length === 1 ? 0 : 1]}</b> within ${state.viewRadius} mi that fit everyone${hidden ? ` · ${hidden} over budget hidden` : ""}</span>`;
+    status.innerHTML = `<span><b>${fit.length} ${cat.noun[fit.length === 1 ? 0 : 1]}</b> within ${state.viewRadius} mi that fit everyone${state.facets.size ? " and your filters" : ""}${hidden ? ` · ${hidden} over budget hidden` : ""}</span>`;
     drawMap(fit);
   }
   $("sort").addEventListener("change", (e) => { state.sort = e.target.value; loadResults(); });
@@ -992,7 +1102,7 @@ const SUPABASE_KEY = "sb_publishable_wNfAJEJs_eoCjoyU12GFTA__fzSicUi";
 
   // ---------- routing ----------
   function goHome() { state.code = null; state.status = null; state.viewCenter = null; history.replaceState(null, "", location.pathname); show("home"); }
-  function startNew() { state.code = null; state.status = null; state.viewCenter = null; state.myTier = null; state.center = null; $("where-out").innerHTML = ""; history.replaceState(null, "", location.pathname); renderCreate(); show("create"); }
+  function startNew() { state.code = null; state.status = null; state.viewCenter = null; state.myAmt = null; state.center = null; $("where-out").innerHTML = ""; history.replaceState(null, "", location.pathname); renderCreate(); show("create"); }
   $("start").addEventListener("click", startNew);
   $("missing-start").addEventListener("click", startNew);
   $("restart").addEventListener("click", startNew);
@@ -1003,7 +1113,7 @@ const SUPABASE_KEY = "sb_publishable_wNfAJEJs_eoCjoyU12GFTA__fzSicUi";
     if (!m) { if (current !== "create") show("home"); return; }
     if (state.code === m[1] && state.status) return;
     state.code = m[1]; state.viewCenter = null;
-    const saved = store.get("lowkey.tier." + state.code); state.myTier = saved === null ? null : Number(saved);
+    const saved = store.get("lowkey.amt." + state.code); state.myAmt = saved === null ? null : Number(saved);
     try {
       const s = await rpc("plan_status", { p_code: state.code, p_device: DEVICE });
       if (!s) { show("missing"); return; }
