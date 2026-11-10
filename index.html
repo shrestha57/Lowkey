@@ -1,0 +1,913 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+</head>
+<body>
+<title>Lowkey Plans</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Figtree:wght@400;500;600;700&family=JetBrains+Mono:wght@500;700&display=swap">
+<style> .leaflet-pane, .leaflet-tile, .leaflet-marker-icon, .leaflet-marker-shadow, .leaflet-tile-container, .leaflet-pane > svg, .leaflet-pane > canvas, .leaflet-zoom-box, .leaflet-image-layer, .leaflet-layer { position: absolute; left: 0; top: 0; } .leaflet-container { overflow: hidden; } .leaflet-tile, .leaflet-marker-icon, .leaflet-marker-shadow { -webkit-user-select: none; -moz-user-select: none; user-select: none; -webkit-user-drag: none; } .leaflet-tile::selection { background: transparent; } .leaflet-safari .leaflet-tile { image-rendering: -webkit-optimize-contrast; } .leaflet-safari .leaflet-tile-container { width: 1600px; height: 1600px; -webkit-transform-origin: 0 0; } .leaflet-marker-icon, .leaflet-marker-shadow { display: block; } .leaflet-container .leaflet-overlay-pane svg { max-width: none !important; max-height: none !important; } .leaflet-container .leaflet-marker-pane img, .leaflet-container .leaflet-shadow-pane img, .leaflet-container .leaflet-tile-pane img, .leaflet-container img.leaflet-image-layer, .leaflet-container .leaflet-tile { max-width: none !important; max-height: none !important; width: auto; padding: 0; } .leaflet-container img.leaflet-tile { mix-blend-mode: plus-lighter; } .leaflet-container.leaflet-touch-zoom { -ms-touch-action: pan-x pan-y; touch-action: pan-x pan-y; } .leaflet-container.leaflet-touch-drag { -ms-touch-action: pinch-zoom; touch-action: none; touch-action: pinch-zoom; } .leaflet-container.leaflet-touch-drag.leaflet-touch-zoom { -ms-touch-action: none; touch-action: none; } .leaflet-container { -webkit-tap-highlight-color: transparent; } .leaflet-container a { -webkit-tap-highlight-color: rgba(51, 181, 229, 0.4); } .leaflet-tile { filter: inherit; visibility: hidden; } .leaflet-tile-loaded { visibility: inherit; } .leaflet-zoom-box { width: 0; height: 0; -moz-box-sizing: border-box; box-sizing: border-box; z-index: 800; } .leaflet-overlay-pane svg { -moz-user-select: none; } .leaflet-pane { z-index: 400; } .leaflet-tile-pane { z-index: 200; } .leaflet-overlay-pane { z-index: 400; } .leaflet-shadow-pane { z-index: 500; } .leaflet-marker-pane { z-index: 600; } .leaflet-tooltip-pane { z-index: 650; } .leaflet-popup-pane { z-index: 700; } .leaflet-map-pane canvas { z-index: 100; } .leaflet-map-pane svg { z-index: 200; } .leaflet-vml-shape { width: 1px; height: 1px; } .lvml { behavior: none; display: inline-block; position: absolute; } .leaflet-control { position: relative; z-index: 800; pointer-events: visiblePainted; pointer-events: auto; } .leaflet-top, .leaflet-bottom { position: absolute; z-index: 1000; pointer-events: none; } .leaflet-top { top: 0; } .leaflet-right { right: 0; } .leaflet-bottom { bottom: 0; } .leaflet-left { left: 0; } .leaflet-control { float: left; clear: both; } .leaflet-right .leaflet-control { float: right; } .leaflet-top .leaflet-control { margin-top: 10px; } .leaflet-bottom .leaflet-control { margin-bottom: 10px; } .leaflet-left .leaflet-control { margin-left: 10px; } .leaflet-right .leaflet-control { margin-right: 10px; } .leaflet-fade-anim .leaflet-popup { opacity: 0; -webkit-transition: opacity 0.2s linear; -moz-transition: opacity 0.2s linear; transition: opacity 0.2s linear; } .leaflet-fade-anim .leaflet-map-pane .leaflet-popup { opacity: 1; } .leaflet-zoom-animated { -webkit-transform-origin: 0 0; -ms-transform-origin: 0 0; transform-origin: 0 0; } svg.leaflet-zoom-animated { will-change: transform; } .leaflet-zoom-anim .leaflet-zoom-animated { -webkit-transition: -webkit-transform 0.25s cubic-bezier(0,0,0.25,1); -moz-transition: -moz-transform 0.25s cubic-bezier(0,0,0.25,1); transition: transform 0.25s cubic-bezier(0,0,0.25,1); } .leaflet-zoom-anim .leaflet-tile, .leaflet-pan-anim .leaflet-tile { -webkit-transition: none; -moz-transition: none; transition: none; } .leaflet-zoom-anim .leaflet-zoom-hide { visibility: hidden; } .leaflet-interactive { cursor: pointer; } .leaflet-grab { cursor: -webkit-grab; cursor: -moz-grab; cursor: grab; } .leaflet-crosshair, .leaflet-crosshair .leaflet-interactive { cursor: crosshair; } .leaflet-popup-pane, .leaflet-control { cursor: auto; } .leaflet-dragging .leaflet-grab, .leaflet-dragging .leaflet-grab .leaflet-interactive, .leaflet-dragging .leaflet-marker-draggable { cursor: move; cursor: -webkit-grabbing; cursor: -moz-grabbing; cursor: grabbing; } .leaflet-marker-icon, .leaflet-marker-shadow, .leaflet-image-layer, .leaflet-pane > svg path, .leaflet-tile-container { pointer-events: none; } .leaflet-marker-icon.leaflet-interactive, .leaflet-image-layer.leaflet-interactive, .leaflet-pane > svg path.leaflet-interactive, svg.leaflet-image-layer.leaflet-interactive path { pointer-events: visiblePainted; pointer-events: auto; } .leaflet-container { background: #ddd; outline-offset: 1px; } .leaflet-container a { color: #0078A8; } .leaflet-zoom-box { border: 2px dotted #38f; background: rgba(255,255,255,0.5); } .leaflet-container { font-family: "Helvetica Neue", Arial, Helvetica, sans-serif; font-size: 12px; font-size: 0.75rem; line-height: 1.5; } .leaflet-bar { box-shadow: 0 1px 5px rgba(0,0,0,0.65); border-radius: 4px; } .leaflet-bar a { background-color: #fff; border-bottom: 1px solid #ccc; width: 26px; height: 26px; line-height: 26px; display: block; text-align: center; text-decoration: none; color: black; } .leaflet-bar a, .leaflet-control-layers-toggle { background-position: 50% 50%; background-repeat: no-repeat; display: block; } .leaflet-bar a:hover, .leaflet-bar a:focus { background-color: #f4f4f4; } .leaflet-bar a:first-child { border-top-left-radius: 4px; border-top-right-radius: 4px; } .leaflet-bar a:last-child { border-bottom-left-radius: 4px; border-bottom-right-radius: 4px; border-bottom: none; } .leaflet-bar a.leaflet-disabled { cursor: default; background-color: #f4f4f4; color: #bbb; } .leaflet-touch .leaflet-bar a { width: 30px; height: 30px; line-height: 30px; } .leaflet-touch .leaflet-bar a:first-child { border-top-left-radius: 2px; border-top-right-radius: 2px; } .leaflet-touch .leaflet-bar a:last-child { border-bottom-left-radius: 2px; border-bottom-right-radius: 2px; } .leaflet-control-zoom-in, .leaflet-control-zoom-out { font: bold 18px 'Lucida Console', Monaco, monospace; text-indent: 1px; } .leaflet-touch .leaflet-control-zoom-in, .leaflet-touch .leaflet-control-zoom-out { font-size: 22px; } .leaflet-control-layers { box-shadow: 0 1px 5px rgba(0,0,0,0.4); background: #fff; border-radius: 5px; } .leaflet-control-layers-toggle { background-image: none; width: 36px; height: 36px; } .leaflet-retina .leaflet-control-layers-toggle { background-image: none; background-size: 26px 26px; } .leaflet-touch .leaflet-control-layers-toggle { width: 44px; height: 44px; } .leaflet-control-layers .leaflet-control-layers-list, .leaflet-control-layers-expanded .leaflet-control-layers-toggle { display: none; } .leaflet-control-layers-expanded .leaflet-control-layers-list { display: block; position: relative; } .leaflet-control-layers-expanded { padding: 6px 10px 6px 6px; color: #333; background: #fff; } .leaflet-control-layers-scrollbar { overflow-y: scroll; overflow-x: hidden; padding-right: 5px; } .leaflet-control-layers-selector { margin-top: 2px; position: relative; top: 1px; } .leaflet-control-layers label { display: block; font-size: 13px; font-size: 1.08333em; } .leaflet-control-layers-separator { height: 0; border-top: 1px solid #ddd; margin: 5px -10px 5px -6px; } .leaflet-default-icon-path { background-image: none; } .leaflet-container .leaflet-control-attribution { background: #fff; background: rgba(255, 255, 255, 0.8); margin: 0; } .leaflet-control-attribution, .leaflet-control-scale-line { padding: 0 5px; color: #333; line-height: 1.4; } .leaflet-control-attribution a { text-decoration: none; } .leaflet-control-attribution a:hover, .leaflet-control-attribution a:focus { text-decoration: underline; } .leaflet-attribution-flag { display: inline !important; vertical-align: baseline !important; width: 1em; height: 0.6669em; } .leaflet-left .leaflet-control-scale { margin-left: 5px; } .leaflet-bottom .leaflet-control-scale { margin-bottom: 5px; } .leaflet-control-scale-line { border: 2px solid #777; border-top: none; line-height: 1.1; padding: 2px 5px 1px; white-space: nowrap; -moz-box-sizing: border-box; box-sizing: border-box; background: rgba(255, 255, 255, 0.8); text-shadow: 1px 1px #fff; } .leaflet-control-scale-line:not(:first-child) { border-top: 2px solid #777; border-bottom: none; margin-top: -2px; } .leaflet-control-scale-line:not(:first-child):not(:last-child) { border-bottom: 2px solid #777; } .leaflet-touch .leaflet-control-attribution, .leaflet-touch .leaflet-control-layers, .leaflet-touch .leaflet-bar { box-shadow: none; } .leaflet-touch .leaflet-control-layers, .leaflet-touch .leaflet-bar { border: 2px solid rgba(0,0,0,0.2); background-clip: padding-box; } .leaflet-popup { position: absolute; text-align: center; margin-bottom: 20px; } .leaflet-popup-content-wrapper { padding: 1px; text-align: left; border-radius: 12px; } .leaflet-popup-content { margin: 13px 24px 13px 20px; line-height: 1.3; font-size: 13px; font-size: 1.08333em; min-height: 1px; } .leaflet-popup-content p { margin: 17px 0; margin: 1.3em 0; } .leaflet-popup-tip-container { width: 40px; height: 20px; position: absolute; left: 50%; margin-top: -1px; margin-left: -20px; overflow: hidden; pointer-events: none; } .leaflet-popup-tip { width: 17px; height: 17px; padding: 1px; margin: -10px auto 0; pointer-events: auto; -webkit-transform: rotate(45deg); -moz-transform: rotate(45deg); -ms-transform: rotate(45deg); transform: rotate(45deg); } .leaflet-popup-content-wrapper, .leaflet-popup-tip { background: white; color: #333; box-shadow: 0 3px 14px rgba(0,0,0,0.4); } .leaflet-container a.leaflet-popup-close-button { position: absolute; top: 0; right: 0; border: none; text-align: center; width: 24px; height: 24px; font: 16px/24px Tahoma, Verdana, sans-serif; color: #757575; text-decoration: none; background: transparent; } .leaflet-container a.leaflet-popup-close-button:hover, .leaflet-container a.leaflet-popup-close-button:focus { color: #585858; } .leaflet-popup-scrolled { overflow: auto; } .leaflet-oldie .leaflet-popup-content-wrapper { -ms-zoom: 1; } .leaflet-oldie .leaflet-popup-tip { width: 24px; margin: 0 auto; -ms-filter: "progid:DXImageTransform.Microsoft.Matrix(M11=0.70710678, M12=0.70710678, M21=-0.70710678, M22=0.70710678)"; filter: progid:DXImageTransform.Microsoft.Matrix(M11=0.70710678, M12=0.70710678, M21=-0.70710678, M22=0.70710678); } .leaflet-oldie .leaflet-control-zoom, .leaflet-oldie .leaflet-control-layers, .leaflet-oldie .leaflet-popup-content-wrapper, .leaflet-oldie .leaflet-popup-tip { border: 1px solid #999; } .leaflet-div-icon { background: #fff; border: 1px solid #666; } .leaflet-tooltip { position: absolute; padding: 6px; background-color: #fff; border: 1px solid #fff; border-radius: 3px; color: #222; white-space: nowrap; -webkit-user-select: none; -moz-user-select: none; -ms-user-select: none; user-select: none; pointer-events: none; box-shadow: 0 1px 3px rgba(0,0,0,0.4); } .leaflet-tooltip.leaflet-interactive { cursor: pointer; pointer-events: auto; } .leaflet-tooltip-top:before, .leaflet-tooltip-bottom:before, .leaflet-tooltip-left:before, .leaflet-tooltip-right:before { position: absolute; pointer-events: none; border: 6px solid transparent; background: transparent; content: ""; } .leaflet-tooltip-bottom { margin-top: 6px; } .leaflet-tooltip-top { margin-top: -6px; } .leaflet-tooltip-bottom:before, .leaflet-tooltip-top:before { left: 50%; margin-left: -6px; } .leaflet-tooltip-top:before { bottom: 0; margin-bottom: -12px; border-top-color: #fff; } .leaflet-tooltip-bottom:before { top: 0; margin-top: -12px; margin-left: -6px; border-bottom-color: #fff; } .leaflet-tooltip-left { margin-left: -6px; } .leaflet-tooltip-right { margin-left: 6px; } .leaflet-tooltip-left:before, .leaflet-tooltip-right:before { top: 50%; margin-top: -6px; } .leaflet-tooltip-left:before { right: 0; margin-right: -12px; border-left-color: #fff; } .leaflet-tooltip-right:before { left: 0; margin-left: -12px; border-right-color: #fff; } @media print { .leaflet-control { -webkit-print-color-adjust: exact; print-color-adjust: exact; } } </style>
+<style>
+/* Layout: one playful app column for the flow; results widen to list + map on laptops. Visual idea: receipts, coins and ticket stubs. */
+:root {
+  --bg: #EEF2EA;
+  --surface: #FFFFFF;
+  --ink: #161A15;
+  --muted: #5B6457;
+  --line: #161A15;
+  --hi: #FFDD3C;
+  --coral: #FF6A47;
+  --mint: #1F9E70;
+  --sky: #7CC4FF;
+  --hi-ink: #161A15;
+  --shadow: #161A15;
+  --font-display: "Bricolage Grotesque", "Arial Rounded MT Bold", system-ui, sans-serif;
+  --font-body: "Figtree", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, "SF Mono", Menlo, monospace;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #11140F; --surface: #1B2019; --ink: #EEF3E9; --muted: #A3AD9C; --line: #EEF3E9;
+    --hi: #FFD83A; --coral: #FF7A5A; --mint: #36C08D; --sky: #8ccdff; --hi-ink: #161A15; --shadow: #000000;
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #11140F; --surface: #1B2019; --ink: #EEF3E9; --muted: #A3AD9C; --line: #EEF3E9;
+  --hi: #FFD83A; --coral: #FF7A5A; --mint: #36C08D; --sky: #8ccdff; --hi-ink: #161A15; --shadow: #000000;
+  color-scheme: dark;
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0; background: var(--bg); color: var(--ink);
+  font-family: var(--font-body); font-size: 16px; line-height: 1.5;
+  padding-left: max(16px, env(safe-area-inset-left, 0px));
+  padding-right: max(16px, env(safe-area-inset-right, 0px));
+  padding-block: 20px 40px;
+  background-image: radial-gradient(color-mix(in srgb, var(--ink) 9%, transparent) 1px, transparent 1px);
+  background-size: 22px 22px;
+}
+.wrap { max-width: 1100px; margin: 0 auto; }
+.top { display: flex; align-items: center; justify-content: space-between; gap: 12px; margin-bottom: 28px; }
+.logo { display: flex; align-items: center; gap: 10px; font-family: var(--font-display); font-weight: 800; font-size: 22px; letter-spacing: -0.02em; background: none; border: 0; color: var(--ink); cursor: pointer; padding: 0; }
+.logo-mark { width: 36px; height: 36px; border-radius: 50%; background: var(--hi); border: 2px solid var(--line); display: grid; place-items: center; font-size: 18px; box-shadow: 2px 2px 0 var(--shadow); color: var(--hi-ink); }
+.pill-note { font-size: 13px; font-weight: 600; color: var(--muted); }
+
+.btn {
+  --b: var(--hi); --bt: var(--hi-ink);
+  font-family: var(--font-display); font-weight: 700; font-size: 18px;
+  display: inline-flex; align-items: center; justify-content: center; gap: 10px;
+  padding: 14px 24px; border-radius: 999px; background: var(--b); color: var(--bt);
+  border: 2px solid var(--line); box-shadow: 4px 4px 0 var(--shadow);
+  cursor: pointer; transition: transform .12s ease, box-shadow .12s ease;
+  text-decoration: none; user-select: none; -webkit-tap-highlight-color: transparent;
+}
+.btn:hover { transform: translate(-1px,-1px) rotate(-1deg); box-shadow: 6px 6px 0 var(--shadow); }
+.btn:active { transform: translate(4px,4px); box-shadow: 0 0 0 var(--shadow); }
+.btn .emo { display: inline-block; }
+.btn:hover .emo { animation: wiggle .5s ease; }
+.btn.coral { --b: var(--coral); --bt: #fff; }
+.btn.mint { --b: var(--mint); --bt: #fff; }
+.btn.ghost { --b: var(--surface); --bt: var(--ink); }
+.btn.big { font-size: 20px; padding: 18px 30px; }
+.btn.sm { font-size: 15px; padding: 9px 16px; box-shadow: 3px 3px 0 var(--shadow); }
+.btn.wide { width: 100%; }
+.btn[disabled] { opacity: .45; cursor: not-allowed; transform: none; box-shadow: 4px 4px 0 var(--shadow); }
+.link { background: none; border: 0; color: var(--muted); font: 600 15px var(--font-body); text-decoration: underline; text-underline-offset: 3px; cursor: pointer; padding: 6px; }
+:is(.btn, .chip, .coin, .logo, .x, .link, select, input):focus-visible { outline: 3px solid var(--sky); outline-offset: 3px; }
+
+@keyframes wiggle { 0%,100% { transform: rotate(0) } 25% { transform: rotate(-14deg) scale(1.15) } 75% { transform: rotate(12deg) scale(1.15) } }
+@keyframes pop { 0% { transform: scale(.6) } 70% { transform: scale(1.08) } 100% { transform: scale(1) } }
+@keyframes rise { from { transform: translateY(12px) } to { transform: none } }
+@keyframes spin { to { transform: rotate(360deg) } }
+
+.view { animation: rise .35s ease both; }
+h1, h2, h3 { font-family: var(--font-display); letter-spacing: -0.025em; text-wrap: balance; margin: 0; }
+h1 { font-size: clamp(40px, 7vw, 68px); line-height: .98; font-weight: 800; }
+h2 { font-size: clamp(28px, 5vw, 40px); line-height: 1.05; font-weight: 800; }
+h3 { font-size: 19px; font-weight: 700; line-height: 1.2; }
+.mark { background: linear-gradient(transparent 55%, var(--hi) 55%, var(--hi) 92%, transparent 92%); padding: 0 .08em; }
+.sub { font-size: 19px; color: var(--muted); max-width: 32ch; margin: 18px 0 28px; }
+.eyebrow { font: 700 12px var(--font-mono); letter-spacing: .12em; text-transform: uppercase; color: var(--muted); margin-bottom: 10px; }
+.hint { font-size: 14px; color: var(--muted); margin: 8px 0 0; }
+.center { text-align: center; }
+
+/* Home */
+.home { display: grid; grid-template-columns: 1.1fr .9fr; gap: 48px; align-items: center; }
+.home-cta { display: flex; flex-wrap: wrap; gap: 14px; align-items: center; }
+.how { display: grid; grid-template-columns: repeat(3, minmax(0,1fr)); gap: 12px; margin-top: 40px; }
+.how div { background: var(--surface); border: 2px solid var(--line); border-radius: 16px; padding: 14px; font-size: 14px; color: var(--muted); }
+.how b { display: block; font-family: var(--font-display); font-size: 17px; color: var(--ink); margin-bottom: 2px; }
+.how .n { font: 700 12px var(--font-mono); color: var(--coral); }
+.example-wrap { position: relative; transform: rotate(2deg); }
+.example-label { position: absolute; top: -14px; left: 18px; background: var(--coral); color: #fff; font: 700 12px var(--font-mono); letter-spacing: .08em; text-transform: uppercase; padding: 4px 10px; border: 2px solid var(--line); border-radius: 999px; z-index: 2; }
+
+/* Ticket */
+.ticket { position: relative; background: var(--surface); border: 2px solid var(--line); border-radius: 18px; box-shadow: 5px 5px 0 var(--shadow); padding: 18px 20px 16px; }
+.ticket::before, .ticket::after { content: ""; position: absolute; top: 58%; width: 22px; height: 22px; border-radius: 50%; background: var(--bg); border: 2px solid var(--line); }
+.ticket::before { left: -12px; clip-path: inset(0 0 0 50%); }
+.ticket::after { right: -12px; clip-path: inset(0 50% 0 0); }
+.perf { border-top: 2px dashed color-mix(in srgb, var(--ink) 35%, transparent); margin: 14px -4px 12px; }
+.price { font: 700 14px var(--font-mono); background: var(--hi); color: var(--hi-ink); border: 2px solid var(--line); border-radius: 8px; padding: 2px 8px; white-space: nowrap; }
+.ticket-head { display: flex; justify-content: space-between; align-items: flex-start; gap: 12px; }
+.ticket p { margin: 6px 0 0; color: var(--muted); font-size: 15px; }
+.meta { display: flex; flex-wrap: wrap; gap: 6px 14px; font: 500 13px var(--font-mono); color: var(--muted); margin-top: 6px; }
+.meta b { color: var(--ink); font-weight: 700; }
+.tags { display: flex; flex-wrap: wrap; gap: 6px; }
+.tag { font: 600 12px var(--font-body); border: 1.5px solid var(--line); border-radius: 999px; padding: 2px 10px; background: color-mix(in srgb, var(--mint) 18%, var(--surface)); }
+.stub-row { display: flex; justify-content: space-between; gap: 10px; font: 500 13px var(--font-mono); color: var(--muted); }
+.stub-row b { color: var(--ink); }
+.actions { display: flex; flex-wrap: wrap; gap: 10px; justify-content: flex-end; align-items: center; margin-top: 12px; }
+.actions a { color: var(--ink); font: 600 14px var(--font-body); text-underline-offset: 3px; }
+
+/* App column */
+.col { max-width: 560px; margin: 0 auto; }
+.card { background: var(--surface); border: 2px solid var(--line); border-radius: 22px; box-shadow: 6px 6px 0 var(--shadow); padding: 24px; }
+.stack { display: grid; gap: 22px; }
+.step { font: 700 12px var(--font-mono); color: var(--muted); letter-spacing: .1em; text-transform: uppercase; }
+.lbl { font-family: var(--font-display); font-weight: 700; font-size: 18px; display: block; margin-bottom: 10px; }
+.chips { display: flex; flex-wrap: wrap; gap: 10px; }
+.chip {
+  font: 600 15px var(--font-body); border: 2px solid var(--line); background: var(--surface); color: var(--ink);
+  border-radius: 999px; padding: 9px 16px; cursor: pointer; box-shadow: 2px 2px 0 var(--shadow);
+  transition: transform .1s, box-shadow .1s; white-space: nowrap;
+}
+.chip:hover { transform: translateY(-2px); }
+.chip:active { transform: translate(2px,2px); box-shadow: 0 0 0 var(--shadow); }
+.chip[aria-pressed="true"] { background: var(--hi); color: var(--hi-ink); }
+.chip[aria-pressed="true"] .emo { animation: wiggle .45s ease; display: inline-block; }
+.chip.sm { font-size: 14px; padding: 6px 12px; }
+.inline-form { display: flex; gap: 10px; }
+.inline-form input, select {
+  flex: 1; min-width: 0; font: 500 16px var(--font-body); padding: 12px 16px; border-radius: 14px;
+  border: 2px solid var(--line); background: var(--bg); color: var(--ink);
+}
+select { flex: none; padding: 8px 12px; font-size: 15px; border-radius: 999px; cursor: pointer; }
+.friends { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 12px; min-height: 38px; }
+.friend { display: inline-flex; align-items: center; gap: 6px; padding: 6px 6px 6px 12px; border-radius: 999px; border: 2px solid var(--line); font-weight: 600; animation: pop .3s ease both; }
+.x { width: 24px; height: 24px; border-radius: 50%; border: 0; background: color-mix(in srgb, var(--ink) 12%, transparent); color: var(--ink); cursor: pointer; font-size: 14px; line-height: 1; }
+.or { display: flex; align-items: center; gap: 10px; color: var(--muted); font-size: 13px; font-weight: 600; margin: 12px 0; }
+.or::before, .or::after { content: ""; flex: 1; border-top: 2px dashed color-mix(in srgb, var(--ink) 25%, transparent); }
+.where-set { display: inline-flex; align-items: center; gap: 8px; margin-top: 12px; font-weight: 700; background: color-mix(in srgb, var(--mint) 18%, var(--surface)); border: 2px solid var(--line); border-radius: 999px; padding: 6px 14px; animation: pop .3s ease both; }
+
+.hand { font-size: 72px; display: inline-block; animation: wiggle 1.6s ease-in-out infinite; }
+.progress { display: flex; gap: 6px; justify-content: center; margin: 4px 0 18px; }
+.progress span { width: 28px; height: 8px; border-radius: 99px; border: 2px solid var(--line); background: var(--surface); }
+.progress span.done { background: var(--mint); }
+.progress span.now { background: var(--hi); }
+.coins { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; }
+.coin {
+  display: grid; gap: 2px; text-align: left; padding: 16px; border-radius: 18px; cursor: pointer;
+  border: 2px solid var(--line); background: var(--surface); color: var(--ink); box-shadow: 3px 3px 0 var(--shadow);
+  transition: transform .12s, box-shadow .12s; font-family: var(--font-body);
+}
+.coins .coin:last-child { grid-column: 1 / -1; grid-template-columns: auto auto 1fr; align-items: center; column-gap: 12px; }
+.coin:hover { transform: translateY(-3px) rotate(-1deg); box-shadow: 5px 5px 0 var(--shadow); }
+.coin:active { transform: translate(3px,3px); box-shadow: 0 0 0 var(--shadow); }
+.coin .amt { font: 700 24px var(--font-mono); letter-spacing: -0.02em; }
+.coin .what { font-size: 14px; color: var(--muted); }
+.coin .emo { font-size: 26px; }
+.coin[aria-pressed="true"] { background: var(--hi); color: var(--hi-ink); }
+.coin[aria-pressed="true"] .what { color: var(--hi-ink); }
+.vote { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+.locked { font-size: 72px; display: inline-block; animation: pop .5s ease both; }
+
+/* Results */
+.results { display: grid; gap: 18px; grid-template-columns: minmax(0, 1fr); }
+.results > * { min-width: 0; }
+.zone { display: flex; flex-wrap: wrap; align-items: center; gap: 14px 18px; background: var(--hi); color: var(--hi-ink); border: 2px solid var(--line); border-radius: 20px; padding: 16px 20px; box-shadow: 5px 5px 0 var(--shadow); }
+.zone .big { font: 700 32px var(--font-mono); letter-spacing: -0.03em; line-height: 1; }
+.zone small { font-weight: 600; display: block; margin-top: 4px; }
+.zone .coinmark { font-size: 38px; }
+.zone .grow { flex: 1; min-width: 180px; }
+.zone .btn { --b: var(--surface); --bt: var(--ink); }
+.cats { display: flex; gap: 10px; overflow-x: auto; padding: 4px 4px 10px; margin: 0 -4px; scrollbar-width: thin; }
+.filters { display: flex; flex-wrap: wrap; gap: 10px 18px; align-items: center; background: var(--surface); border: 2px solid var(--line); border-radius: 18px; padding: 12px 14px; }
+.filters .grp { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; }
+.filters .k { font: 700 12px var(--font-mono); letter-spacing: .08em; text-transform: uppercase; color: var(--muted); }
+.area-btn { font: 700 15px var(--font-body); background: none; border: 0; color: var(--ink); cursor: pointer; text-decoration: underline; text-decoration-style: dashed; text-underline-offset: 4px; padding: 4px 0; max-width: 260px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.status { font-size: 15px; color: var(--muted); display: flex; align-items: center; gap: 10px; min-height: 24px; }
+.status b { color: var(--ink); }
+.spinner { width: 18px; height: 18px; border: 3px solid color-mix(in srgb, var(--ink) 20%, transparent); border-top-color: var(--coral); border-radius: 50%; animation: spin .8s linear infinite; flex: none; }
+.banner { background: color-mix(in srgb, var(--sky) 25%, var(--surface)); border: 2px solid var(--line); border-radius: 14px; padding: 10px 14px; font-size: 14px; font-weight: 500; }
+.split { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 20px; align-items: start; }
+.list { display: grid; gap: 16px; }
+.mapbox { position: sticky; top: calc(16px + env(safe-area-inset-top, 0px)); border: 2px solid var(--line); border-radius: 20px; overflow: hidden; box-shadow: 5px 5px 0 var(--shadow); background: var(--surface); }
+#map { height: 520px; width: 100%; }
+.map-off { padding: 24px; text-align: center; color: var(--muted); font-size: 14px; }
+.leaflet-container { font-family: var(--font-body); }
+.leaflet-popup-content { font: 600 14px var(--font-body); margin: 10px 12px; }
+.ticket.active { outline: 3px solid var(--coral); outline-offset: 3px; }
+.empty { border: 2px dashed var(--line); border-radius: 18px; padding: 22px; text-align: center; color: var(--muted); }
+.row { display: flex; flex-wrap: wrap; gap: 12px; align-items: center; }
+
+.share-box { font: 500 15px var(--font-mono); background: var(--bg); border: 2px dashed var(--line); border-radius: 14px; padding: 14px; white-space: pre-wrap; word-break: break-word; }
+.toast { position: fixed; left: 50%; bottom: calc(24px + env(safe-area-inset-bottom, 0px)); transform: translateX(-50%); background: var(--ink); color: var(--bg); font-weight: 700; padding: 10px 18px; border-radius: 999px; z-index: 2000; animation: pop .25s ease both; max-width: calc(100% - 32px); text-align: center; }
+#confetti { position: fixed; inset: 0; pointer-events: none; z-index: 1500; width: 100%; height: 100%; }
+.foot { margin-top: 44px; text-align: center; font-size: 13px; color: var(--muted); }
+.foot a { color: var(--muted); }
+
+@media (max-width: 860px) {
+  .home { grid-template-columns: 1fr; gap: 40px; }
+  .example-wrap { transform: rotate(1.5deg); max-width: 460px; }
+  .split { grid-template-columns: 1fr; }
+  .mapbox { position: relative; top: 0; order: -1; }
+  #map { height: 260px; }
+}
+@media (max-width: 480px) {
+  .how { grid-template-columns: 1fr; }
+  .card { padding: 18px; }
+  .btn.big { width: 100%; }
+  .zone .big { font-size: 26px; }
+}
+@media (prefers-reduced-motion: reduce) { *, *::before, *::after { animation: none !important; transition: none !important; } }
+</style>
+
+<canvas id="confetti" aria-hidden="true"></canvas>
+<div class="wrap">
+  <header class="top">
+    <button class="logo" id="logo" type="button" aria-label="Lowkey home"><span class="logo-mark" aria-hidden="true">🤫</span>lowkey</button>
+    <span class="pill-note">Budgets stay private. Always.</span>
+  </header>
+
+  <!-- HOME -->
+  <section class="view" id="v-home">
+    <div class="home">
+      <div>
+        <div class="eyebrow">For friend groups on a budget</div>
+        <h1>Plans that fit <span class="mark">everyone's</span> wallet.</h1>
+        <p class="sub">Everyone secretly taps what they can spend. Lowkey finds real spots nearby that work for the whole group. Nobody has to say they're broke.</p>
+        <div class="home-cta">
+          <button class="btn big" id="start" type="button"><span class="emo" aria-hidden="true">✨</span>Start a plan</button>
+          <span class="pill-note">Free. No sign-up.</span>
+        </div>
+        <div class="how">
+          <div><span class="n">01</span><b>Crew + area</b>Who's coming and roughly where.</div>
+          <div><span class="n">02</span><b>Pass the phone</b>Each person taps their budget in secret.</div>
+          <div><span class="n">03</span><b>Explore spots</b>Coffee, free hangouts, activities. All in budget.</div>
+        </div>
+      </div>
+      <div class="example-wrap" aria-label="Example result">
+        <span class="example-label">Example result</span>
+        <div class="ticket">
+          <div class="stub-row"><span>4 friends · within 5 mi</span><span>budget: <b>under $15</b></span></div>
+          <div class="perf"></div>
+          <div class="ticket-head"><h3>A neighborhood café</h3><span class="price">~$6</span></div>
+          <div class="meta"><span><b>0.8 mi</b> away</span><span>Coffee</span><span>open till 6pm</span></div>
+          <div class="perf"></div>
+          <div class="tags"><span class="tag">fits everyone</span><span class="tag">low-key</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SETUP -->
+  <section class="view col" id="v-setup" hidden>
+    <div class="stack">
+      <div><div class="step">Step 1 of 3</div><h2>Who's in, and where?</h2></div>
+      <div class="card stack">
+        <div>
+          <label class="lbl" for="friend-name">Add your crew <span class="pill-note">(2 to 8, include yourself)</span></label>
+          <div class="inline-form" id="friend-form">
+            <input id="friend-name" type="text" maxlength="18" placeholder="Type a name" autocomplete="off">
+            <button class="btn ghost sm" id="friend-add" type="button">Add</button>
+          </div>
+          <div class="friends" id="friends" aria-live="polite"></div>
+          <p class="hint" id="friend-hint">Add at least 2 people.</p>
+        </div>
+        <div>
+          <span class="lbl">Where are you hanging out?</span>
+          <button class="btn mint sm" id="near-me" type="button"><span class="emo" aria-hidden="true">📍</span>Use my location</button>
+          <div class="or">or</div>
+          <div class="inline-form" id="area-form">
+            <input id="area-input" type="text" placeholder="City, neighborhood or zip" autocomplete="off" aria-label="Area">
+            <button class="btn ghost sm" id="area-set" type="button">Set</button>
+          </div>
+          <div id="where-out" aria-live="polite"></div>
+        </div>
+        <div>
+          <span class="lbl" id="dist-lbl">How far will you go?</span>
+          <div class="chips" id="dists" role="group" aria-labelledby="dist-lbl"></div>
+        </div>
+      </div>
+      <button class="btn big wide" id="to-turns" type="button" disabled><span class="emo" aria-hidden="true">📱</span>Start passing the phone</button>
+    </div>
+  </section>
+
+  <!-- PASS -->
+  <section class="view col center" id="v-pass" hidden>
+    <div class="step" id="pass-step">Step 2 of 3</div>
+    <div class="progress" id="progress-pass"></div>
+    <div class="card stack">
+      <div><span class="hand" aria-hidden="true">🫣</span></div>
+      <h2>Pass the phone to <span class="mark" id="pass-name">Name</span></h2>
+      <p class="hint" style="margin:0" id="pass-hint">Everyone else, look away. No peeking.</p>
+      <button class="btn big wide" id="reveal-turn" type="button"><span class="emo" aria-hidden="true">🙋</span><span id="its-me">I'm here</span></button>
+    </div>
+  </section>
+
+  <!-- BUDGET -->
+  <section class="view col" id="v-budget" hidden>
+    <div class="stack">
+      <div class="center">
+        <div class="step">Step 2 of 3</div>
+        <div class="progress" id="progress-budget"></div>
+        <h2>Hey <span class="mark" id="budget-name">you</span>, what can you spend?</h2>
+        <p class="hint">Per person, this hangout. Only you see this.</p>
+      </div>
+      <div class="coins" id="coins" role="group" aria-label="Your budget"></div>
+      <button class="btn big wide coral" id="lock" type="button" disabled><span class="emo" aria-hidden="true">🔒</span>Lock it in</button>
+    </div>
+  </section>
+
+  <!-- STRETCH VOTE -->
+  <section class="view col" id="v-vote" hidden>
+    <div class="stack">
+      <div class="center">
+        <div class="step">Private vote</div>
+        <div class="progress" id="progress-vote"></div>
+        <h2><span class="mark" id="vote-name">You</span>, OK going up to <span id="vote-amt">$30</span>?</h2>
+        <p class="hint">Say no freely. Nobody will ever know who said what.</p>
+      </div>
+      <div class="vote">
+        <button class="btn big mint" id="vote-yes" type="button"><span class="emo" aria-hidden="true">👍</span>I'm in</button>
+        <button class="btn big ghost" id="vote-no" type="button"><span class="emo" aria-hidden="true">🙅</span>Keep it</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- LOCKED -->
+  <section class="view col center" id="v-locked" hidden>
+    <div class="card stack">
+      <div><span class="locked" aria-hidden="true">🔐</span></div>
+      <h2>Locked in. Your secret's safe.</h2>
+      <p class="hint" style="margin:0" id="locked-next">Pass the phone on.</p>
+      <button class="btn big wide mint" id="next-turn" type="button"><span class="emo" aria-hidden="true">👉</span><span id="next-label">Next person</span></button>
+    </div>
+  </section>
+
+  <!-- RESULTS -->
+  <section class="view" id="v-results" hidden>
+    <div class="results">
+      <div><div class="step">Step 3 of 3</div><h2>Spots your whole crew can do</h2></div>
+      <div class="zone" role="status">
+        <span class="coinmark" aria-hidden="true">🪙</span>
+        <div class="grow">
+          <div class="big" id="zone-amt">Under $15</div>
+          <small id="zone-note">each · the group's sweet spot. Nobody's number was shown.</small>
+        </div>
+        <button class="btn sm" id="stretch" type="button"><span class="emo" aria-hidden="true">🤏</span><span id="stretch-label">Stretch a little?</span></button>
+      </div>
+      <div class="cats" id="cats" role="group" aria-label="Categories"></div>
+      <div class="filters">
+        <div class="grp"><span class="k">Area</span><button class="area-btn" id="area-btn" type="button">Near you</button></div>
+        <div class="grp" role="group" aria-label="Distance"><span class="k">Within</span><span class="chips" id="dists2" style="gap:8px"></span></div>
+        <div class="grp"><label class="k" for="sort">Sort</label>
+          <select id="sort"><option value="near">Closest</option><option value="cheap">Cheapest</option><option value="az">A to Z</option></select>
+        </div>
+      </div>
+      <div class="inline-form" id="area-form2" hidden>
+        <input id="area-input2" type="text" placeholder="City, neighborhood or zip" autocomplete="off" aria-label="New area">
+        <button class="btn ghost sm" id="area-go" type="button">Go</button>
+        <button class="btn mint sm" id="near-me2" type="button" aria-label="Use my location">📍</button>
+      </div>
+      <div class="banner" id="sample-banner" hidden>Live places can't load in this preview, so these are <b>sample spots</b>. Open your hosted Lowkey link to see real places near you.</div>
+      <div class="status" id="status" aria-live="polite"></div>
+      <div class="split" id="split">
+        <div class="list" id="list"></div>
+        <div class="mapbox" id="mapbox"><div id="map" role="region" aria-label="Map of spots"></div></div>
+      </div>
+      <div class="row"><button class="link" id="restart" type="button">Start a new plan</button></div>
+    </div>
+  </section>
+
+  <!-- STRETCH RESULT -->
+  <section class="view col center" id="v-stretchres" hidden>
+    <div class="card stack">
+      <div style="font-size:64px" aria-hidden="true" id="sr-emo">🤝</div>
+      <h2 id="sr-title">Staying put</h2>
+      <p class="hint" style="margin:0" id="sr-text"></p>
+      <button class="btn big wide" id="sr-go" type="button"><span class="emo" aria-hidden="true">🗺️</span>Back to spots</button>
+    </div>
+  </section>
+
+  <!-- DONE -->
+  <section class="view col" id="v-done" hidden>
+    <div class="stack">
+      <div class="center">
+        <div style="font-size:64px" aria-hidden="true">🎉</div>
+        <h2>It's a plan!</h2>
+        <p class="hint">Drop this in the group chat so it actually happens.</p>
+      </div>
+      <div class="card stack">
+        <div class="share-box" id="share-text"></div>
+        <button class="btn big wide" id="copy" type="button"><span class="emo" aria-hidden="true">📋</span>Copy for the group chat</button>
+      </div>
+      <div class="row" style="justify-content:center">
+        <button class="btn ghost" id="back-spots" type="button"><span class="emo" aria-hidden="true">↩️</span>Back to spots</button>
+        <button class="btn coral" id="new-plan" type="button"><span class="emo" aria-hidden="true">✨</span>New plan</button>
+      </div>
+    </div>
+  </section>
+
+  <p class="foot">Lowkey · prototype. Prices are rough per-person estimates by type of place. Place data © <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener">OpenStreetMap</a> contributors.</p>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.js"></script>
+<script>
+(() => {
+  const $ = (id) => document.getElementById(id);
+  const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  const OVERPASS = ["https://overpass-api.de/api/interpreter", "https://overpass.kumi.systems/api/interpreter"];
+  const NOMINATIM = "https://nominatim.openstreetmap.org/search";
+
+  const TIERS = [
+    { max: 0,   amt: "$0",    label: "Free",      what: "Free stuff only",   emo: "🆓" },
+    { max: 15,  amt: "$15",   label: "Under $15", what: "Keeping it cheap",  emo: "🪙" },
+    { max: 30,  amt: "$30",   label: "Under $30", what: "A little fun money", emo: "💵" },
+    { max: 60,  amt: "$60",   label: "Under $60", what: "Can splurge a bit", emo: "💸" },
+    { max: 1e9, amt: "$100+", label: "$100+",     what: "Treat day",         emo: "👑" },
+  ];
+  const DISTS = [1, 3, 5, 10];
+  // Each category: OpenStreetMap tags to search. Cost is an estimate per person by place type.
+  const CATS = [
+    { id: "free", label: "Free hangouts", noun: ["free spot","free spots"], emo: "🌳", tags: [["leisure","park"],["leisure","garden"],["tourism","viewpoint"],["natural","beach"],["amenity","library"]] },
+    { id: "coffee", label: "Coffee", noun: ["coffee spot","coffee spots"], emo: "☕", tags: [["amenity","cafe"]] },
+    { id: "eats", label: "Cheap eats", noun: ["place to eat","places to eat"], emo: "🌮", tags: [["amenity","fast_food"],["amenity","ice_cream"],["shop","bakery"],["amenity","food_court"]] },
+    { id: "activities", label: "Activities", noun: ["activity","activities"], emo: "🎳", tags: [["leisure","bowling_alley"],["leisure","miniature_golf"],["leisure","escape_game"],["leisure","amusement_arcade"],["amenity","cinema"],["sport","climbing"]] },
+    { id: "culture", label: "Culture", noun: ["culture spot","culture spots"], emo: "🎨", tags: [["tourism","museum"],["tourism","gallery"],["shop","books"],["amenity","arts_centre"]] },
+    { id: "food", label: "Restaurants", noun: ["restaurant","restaurants"], emo: "🍜", tags: [["amenity","restaurant"]] },
+    { id: "ideas", label: "Free ideas", emo: "💡", tags: null },
+  ];
+  const KIND = {
+    "leisure=park": ["Park", 0], "leisure=garden": ["Garden", 0], "tourism=viewpoint": ["Viewpoint", 0], "natural=beach": ["Beach", 0],
+    "amenity=library": ["Library", 0], "amenity=cafe": ["Café", 6], "amenity=fast_food": ["Quick bite", 10], "amenity=ice_cream": ["Ice cream", 6],
+    "shop=bakery": ["Bakery", 6], "amenity=food_court": ["Food court", 12], "leisure=bowling_alley": ["Bowling", 20],
+    "leisure=miniature_golf": ["Mini golf", 15], "leisure=escape_game": ["Escape room", 35], "leisure=amusement_arcade": ["Arcade", 15],
+    "amenity=cinema": ["Movies", 16], "sport=climbing": ["Climbing", 28], "tourism=museum": ["Museum", 15], "tourism=gallery": ["Gallery", 0],
+    "shop=books": ["Bookstore", 0], "amenity=arts_centre": ["Arts center", 10], "amenity=restaurant": ["Restaurant", 22],
+  };
+  const CHEAP_CUISINE = /taco|mexican|pizza|burger|noodle|ramen|pho|vietnamese|sandwich|dumpling|thai|indian/;
+  const IDEAS = [
+    { t: "Sunset picnic", d: "Everyone brings one snack. Find a hill, watch the sky.", cost: 0 },
+    { t: "Board game night", d: "Host at someone's place. Loser picks the next game.", cost: 0 },
+    { t: "Thrift crawl, $10 challenge", d: "Three thrift stores, $10 each. Best outfit wins.", cost: 10 },
+    { t: "Potluck cook-off", d: "Everyone brings one ingredient. Make something weird together.", cost: 12 },
+    { t: "Movie marathon", d: "Pick a trilogy, split popcorn, phones in a basket.", cost: 3 },
+    { t: "Photo walk", d: "Pick a theme (doors, dogs, signs). Share the best shots at the end.", cost: 0 },
+    { t: "Karaoke at home", d: "YouTube karaoke, a speaker, zero shame.", cost: 0 },
+    { t: "Pottery painting", d: "Paint a mug together. Pick up next week, a built-in second hangout.", cost: 25 },
+    { t: "Escape room", d: "60 minutes, one locked room, find out who panics.", cost: 38 },
+    { t: "Cooking class", d: "Learn one dish together, eat it right after.", cost: 55 },
+  ];
+
+  const state = {
+    friends: [], center: null, areaLabel: "", radius: 5,
+    turn: 0, answers: [], draftTier: null, tier: 0,
+    mode: "budget", votes: [], cat: "free", sort: "near", chosen: null, sample: false, req: 0,
+  };
+  const cache = new Map();
+
+  // ---------- helpers ----------
+  const views = ["home","setup","pass","budget","vote","locked","results","stretchres","done"];
+  function show(name) {
+    views.forEach(v => { $("v-" + v).hidden = v !== name; });
+    const el = $("v-" + name);
+    el.style.animation = "none"; void el.offsetWidth; el.style.animation = "";
+    window.scrollTo({ top: 0, behavior: reduce ? "auto" : "smooth" });
+    const h = el.querySelector("h1, h2"); if (h) { h.setAttribute("tabindex", "-1"); h.focus({ preventScroll: true }); }
+    if (name === "results" && map) setTimeout(() => map.invalidateSize(), 60);
+  }
+  const esc = (s) => { const d = document.createElement("div"); d.textContent = s; return d.innerHTML; };
+  function miles(a, b) {
+    const R = 3958.8, toR = (x) => x * Math.PI / 180;
+    const dLat = toR(b.lat - a.lat), dLon = toR(b.lon - a.lon);
+    const h = Math.sin(dLat / 2) ** 2 + Math.cos(toR(a.lat)) * Math.cos(toR(b.lat)) * Math.sin(dLon / 2) ** 2;
+    return 2 * R * Math.asin(Math.sqrt(h));
+  }
+  function withTimeout(ms) { const c = new AbortController(); const t = setTimeout(() => c.abort(), ms); return { signal: c.signal, done: () => clearTimeout(t) }; }
+  let toastTimer;
+  function toast(msg) {
+    document.querySelectorAll(".toast").forEach(t => t.remove());
+    const t = document.createElement("div"); t.className = "toast"; t.setAttribute("role", "status"); t.textContent = msg;
+    document.body.appendChild(t); clearTimeout(toastTimer); toastTimer = setTimeout(() => t.remove(), 2600);
+  }
+  function chipRow(container, items, isOn, onTap, small) {
+    container.innerHTML = "";
+    items.forEach(it => {
+      const b = document.createElement("button");
+      b.type = "button"; b.className = "chip" + (small ? " sm" : "");
+      b.setAttribute("aria-pressed", String(isOn(it.id)));
+      b.innerHTML = (it.emo ? `<span class="emo" aria-hidden="true">${it.emo}</span> ` : "") + esc(it.label);
+      b.addEventListener("click", () => onTap(it.id));
+      container.appendChild(b);
+    });
+  }
+
+  // ---------- location ----------
+  function setWhere(center, label) {
+    state.center = center; state.areaLabel = label;
+    $("where-out").innerHTML = `<span class="where-set">📍 <span></span></span>`;
+    $("where-out").querySelector(".where-set span").textContent = label;
+    $("area-btn").textContent = label;
+    updateSetupGate();
+  }
+  function whereMsg(text, isErr) {
+    const out = $("where-out"); out.innerHTML = "";
+    const p = document.createElement("p"); p.className = "hint"; p.textContent = text;
+    if (isErr) p.style.color = "var(--coral)";
+    out.appendChild(p);
+    if (!$("v-results").hidden) toast(text);
+  }
+  const LOC_BLOCKED = "Location is blocked here (Claude previews can't use it). Type an area instead. It works on your hosted link.";
+  function locateMe(after) {
+    if (!navigator.geolocation) { whereMsg(LOC_BLOCKED, true); return; }
+    whereMsg("Finding your location…");
+    let finished = false;
+    const fail = (e) => {
+      if (finished) return; finished = true;
+      const denied = e && e.code === 1;
+      whereMsg(denied ? "Location permission was denied. Allow it in your browser, or type an area instead." : LOC_BLOCKED, true);
+    };
+    const guard = setTimeout(() => fail(null), 8000);
+    try {
+      navigator.geolocation.getCurrentPosition(
+        (pos) => { if (finished) return; finished = true; clearTimeout(guard); setWhere({ lat: pos.coords.latitude, lon: pos.coords.longitude }, "Near you"); after && after(); },
+        (e) => { clearTimeout(guard); fail(e); },
+        { enableHighAccuracy: false, timeout: 8000, maximumAge: 300000 }
+      );
+    } catch (e) { clearTimeout(guard); fail(null); }
+  }
+  async function geocode(q) {
+    const t = withTimeout(6000);
+    try {
+      const r = await fetch(`${NOMINATIM}?format=json&limit=1&q=${encodeURIComponent(q)}`, { signal: t.signal, headers: { "Accept": "application/json" } });
+      if (!r.ok) throw new Error("bad");
+      const j = await r.json();
+      if (!j.length) return { notFound: true };
+      const name = j[0].display_name.split(",").slice(0, 2).join(",").trim();
+      return { center: { lat: +j[0].lat, lon: +j[0].lon }, label: name };
+    } catch { return { offline: true }; } finally { t.done(); }
+  }
+  async function handleArea(q, after) {
+    q = q.trim();
+    if (!q) { whereMsg("Type a city, neighborhood or zip first.", true); return; }
+    whereMsg(`Searching for "${q}"…`);
+    const g = await geocode(q);
+    if (g.notFound) { whereMsg(`Couldn't find "${q}". Try a city or zip.`, true); return; }
+    if (g.offline) { setWhere({ lat: 37.3337, lon: -121.8907 }, q); state.sample = true; toast("Live map search can't run in this preview, so you'll see sample spots."); after && after(); return; }
+    setWhere(g.center, g.label); after && after();
+  }
+
+  // ---------- setup ----------
+  function renderSetup() {
+    const f = $("friends"); f.innerHTML = "";
+    const colors = ["var(--hi)","var(--sky)","var(--mint)","var(--coral)"];
+    state.friends.forEach((name, i) => {
+      const s = document.createElement("span"); s.className = "friend";
+      s.style.background = `color-mix(in srgb, ${colors[i % 4]} 35%, var(--surface))`;
+      const t = document.createElement("span"); t.textContent = name;
+      const x = document.createElement("button"); x.type = "button"; x.className = "x"; x.textContent = "✕"; x.setAttribute("aria-label", "Remove " + name);
+      x.addEventListener("click", () => { state.friends.splice(i, 1); renderSetup(); });
+      s.append(t, x); f.appendChild(s);
+    });
+    const n = state.friends.length;
+    $("friend-hint").textContent = n < 2 ? `Add at least ${2 - n} more ${2 - n === 1 ? "person" : "people"}.` : n >= 8 ? "That's the max. Big crew!" : `${n} people in.`;
+    chipRow($("dists"), DISTS.map(d => ({ id: d, label: d + " mi" })), id => state.radius === id, id => { state.radius = id; renderSetup(); });
+    updateSetupGate();
+  }
+  function updateSetupGate() {
+    const ok = state.friends.length >= 2 && !!state.center;
+    $("to-turns").disabled = !ok;
+  }
+  function addFriend() {
+    const inp = $("friend-name"); const name = inp.value.trim().replace(/\s+/g, " ");
+    if (!name) return;
+    if (state.friends.length >= 8) { toast("Max 8 people"); return; }
+    if (state.friends.some(x => x.toLowerCase() === name.toLowerCase())) { toast(`${name} is already in`); return; }
+    state.friends.push(name); inp.value = ""; inp.focus(); renderSetup();
+  }
+  $("friend-add").addEventListener("click", addFriend);
+  $("friend-name").addEventListener("keydown", (e) => { if (e.key === "Enter") { e.preventDefault(); addFriend(); } });
+  $("near-me").addEventListener("click", () => locateMe());
+  $("area-set").addEventListener("click", () => handleArea($("area-input").value));
+  $("area-input").addEventListener("keydown", (e) => { if (e.key === "Enter") { e.preventDefault(); handleArea($("area-input").value); } });
+
+  // ---------- turns ----------
+  function renderProgress(el) {
+    el.innerHTML = state.friends.map((_, i) => `<span class="${i < state.turn ? "done" : i === state.turn ? "now" : ""}"></span>`).join("");
+    el.setAttribute("aria-label", `Person ${state.turn + 1} of ${state.friends.length}`);
+  }
+  function startPass() {
+    const name = state.friends[state.turn];
+    $("pass-name").textContent = name;
+    $("its-me").textContent = `I'm ${name}, show me`;
+    $("pass-step").textContent = state.mode === "budget" ? "Step 2 of 3" : "Private vote";
+    $("pass-hint").textContent = state.mode === "budget" ? "Everyone else, look away. No peeking." : "Quick yes or no. Everyone else, look away.";
+    renderProgress($("progress-pass"));
+    show("pass");
+  }
+  function startTurn() {
+    if (state.mode === "budget") {
+      state.draftTier = null;
+      $("budget-name").textContent = state.friends[state.turn];
+      renderProgress($("progress-budget")); renderCoins(); show("budget");
+    } else {
+      $("vote-name").textContent = state.friends[state.turn];
+      $("vote-amt").textContent = TIERS[state.tier + 1].label.replace("Under ", "");
+      renderProgress($("progress-vote")); show("vote");
+    }
+  }
+  function renderCoins() {
+    const c = $("coins"); c.innerHTML = "";
+    TIERS.forEach((t, i) => {
+      const b = document.createElement("button"); b.type = "button"; b.className = "coin";
+      b.setAttribute("aria-pressed", String(state.draftTier === i));
+      b.setAttribute("aria-label", `${t.label}: ${t.what}`);
+      b.innerHTML = `<span class="emo" aria-hidden="true">${t.emo}</span><span class="amt">${t.amt}</span><span class="what">${t.what}</span>`;
+      b.addEventListener("click", () => { state.draftTier = i; renderCoins(); });
+      c.appendChild(b);
+    });
+    $("lock").disabled = state.draftTier === null;
+  }
+  function afterAnswer() {
+    burst(40);
+    const last = state.turn === state.friends.length - 1;
+    if (last) {
+      $("locked-next").textContent = state.mode === "budget" ? "That's everyone. Ready for the reveal?" : "That's everyone. Let's see.";
+      $("next-label").textContent = state.mode === "budget" ? "Show our spots" : "See the result";
+    } else {
+      const nxt = state.friends[state.turn + 1];
+      $("locked-next").textContent = `Now pass the phone to ${nxt}.`;
+      $("next-label").textContent = `Pass to ${nxt}`;
+    }
+    show("locked");
+  }
+  function nextTurn() {
+    if (state.turn < state.friends.length - 1) { state.turn += 1; startPass(); return; }
+    if (state.mode === "budget") {
+      state.tier = Math.min(...state.answers);
+      openResults(true);
+    } else {
+      const allYes = state.votes.every(Boolean);
+      if (allYes) {
+        state.tier += 1;
+        $("sr-emo").textContent = "🥳"; $("sr-title").textContent = `Everyone's in. Now ${TIERS[state.tier].label}!`;
+        $("sr-text").textContent = "More spots unlocked. Votes stay secret either way.";
+        burst(120);
+      } else {
+        $("sr-emo").textContent = "🤝"; $("sr-title").textContent = `Staying at ${TIERS[state.tier].label}`;
+        $("sr-text").textContent = "Not everyone was up for it, and nobody knows who said no. Plenty of good spots still fit.";
+      }
+      state.mode = "budget";
+      show("stretchres");
+    }
+  }
+  $("reveal-turn").addEventListener("click", startTurn);
+  $("lock").addEventListener("click", () => { state.answers[state.turn] = state.draftTier; afterAnswer(); });
+  $("vote-yes").addEventListener("click", () => { state.votes[state.turn] = true; afterAnswer(); });
+  $("vote-no").addEventListener("click", () => { state.votes[state.turn] = false; afterAnswer(); });
+  $("next-turn").addEventListener("click", nextTurn);
+  $("stretch").addEventListener("click", () => {
+    if (state.tier >= TIERS.length - 1) return;
+    state.mode = "vote"; state.turn = 0; state.votes = []; startPass();
+  });
+  $("sr-go").addEventListener("click", () => openResults(false));
+
+  // ---------- data ----------
+  function overpassQuery(cat, c, meters) {
+    const parts = cat.tags.map(([k, v]) => `nwr["${k}"="${v}"]["name"](around:${meters},${c.lat},${c.lon});`).join("");
+    return `[out:json][timeout:25];(${parts});out center tags 120;`;
+  }
+  function kindOf(tags) {
+    for (const key of Object.keys(KIND)) { const [k, v] = key.split("="); if (tags[k] === v) return key; }
+    return null;
+  }
+  function estimate(key, tags) {
+    let [label, cost] = KIND[key];
+    if (key === "tourism=museum" && (tags.fee === "no" || tags.fee === "free")) cost = 0;
+    if (key === "amenity=restaurant" && CHEAP_CUISINE.test((tags.cuisine || "").toLowerCase())) cost = 14;
+    if (tags.fee === "no" && cost > 0 && key !== "amenity=cafe") cost = 0;
+    return { label, cost };
+  }
+  function parse(elements, c) {
+    const seen = new Set(), out = [];
+    for (const e of elements) {
+      const t = e.tags || {}; const lat = e.lat ?? e.center?.lat, lon = e.lon ?? e.center?.lon;
+      if (!t.name || lat == null) continue;
+      const key = kindOf(t); if (!key) continue;
+      const id = t.name.toLowerCase() + "|" + key; if (seen.has(id)) continue; seen.add(id);
+      const { label, cost } = estimate(key, t);
+      const addr = [t["addr:housenumber"], t["addr:street"]].filter(Boolean).join(" ");
+      out.push({ name: t.name, kind: label, cost, lat, lon, dist: miles(c, { lat, lon }), addr, city: t["addr:city"] || "", hours: t.opening_hours || "", site: t.website || t["contact:website"] || "" });
+    }
+    return out;
+  }
+  async function fetchPlaces(cat, c, radiusMi) {
+    const key = `${cat.id}|${c.lat.toFixed(3)}|${c.lon.toFixed(3)}|${radiusMi}`;
+    if (cache.has(key)) return cache.get(key);
+    const body = "data=" + encodeURIComponent(overpassQuery(cat, c, Math.round(radiusMi * 1609.34)));
+    for (const url of OVERPASS) {
+      const t = withTimeout(25000);
+      try {
+        const r = await fetch(url, { method: "POST", body, signal: t.signal, headers: { "Content-Type": "application/x-www-form-urlencoded" } });
+        if (!r.ok) continue;
+        const j = await r.json();
+        const list = parse(j.elements || [], c);
+        cache.set(key, list); return list;
+      } catch { /* try next mirror */ } finally { t.done(); }
+    }
+    return null;
+  }
+  function samplePlaces(cat, c) {
+    // Clearly labeled examples, shown only when live data can't load.
+    const names = {
+      free: [["Sample park", "Park", 0], ["Sample viewpoint", "Viewpoint", 0], ["Sample library", "Library", 0], ["Sample garden", "Garden", 0]],
+      coffee: [["Sample café", "Café", 6], ["Sample espresso bar", "Café", 6], ["Sample tea house", "Café", 6]],
+      eats: [["Sample taqueria", "Quick bite", 10], ["Sample bakery", "Bakery", 6], ["Sample ice cream", "Ice cream", 6]],
+      activities: [["Sample bowling", "Bowling", 20], ["Sample mini golf", "Mini golf", 15], ["Sample arcade", "Arcade", 15], ["Sample escape room", "Escape room", 35]],
+      culture: [["Sample museum", "Museum", 15], ["Sample bookstore", "Bookstore", 0], ["Sample gallery", "Gallery", 0]],
+      food: [["Sample noodle house", "Restaurant", 14], ["Sample bistro", "Restaurant", 22]],
+    }[cat.id] || [];
+    return names.map(([name, kind, cost], i) => {
+      const lat = c.lat + Math.sin(i * 2.1) * 0.02 * (i + 1) / 2, lon = c.lon + Math.cos(i * 2.1) * 0.025 * (i + 1) / 2;
+      return { name, kind, cost, lat, lon, dist: miles(c, { lat, lon }), addr: "", city: "", hours: "", site: "", sample: true };
+    });
+  }
+
+  // ---------- map ----------
+  let map = null, layer = null, tilesOk = true;
+  function ensureMap() {
+    if (map || typeof L === "undefined") { if (typeof L === "undefined") mapOff("Map couldn't load here."); return; }
+    map = L.map("map", { zoomControl: true, attributionControl: true });
+    const tiles = L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png", { maxZoom: 19, attribution: "© OpenStreetMap" });
+    let errs = 0;
+    tiles.on("tileerror", () => { errs++; if (errs > 4 && tilesOk) { tilesOk = false; mapOff("Map tiles can't load in this preview. They will on your hosted link."); } });
+    tiles.addTo(map);
+    layer = L.layerGroup().addTo(map);
+  }
+  function mapOff(msg) { $("mapbox").innerHTML = `<div class="map-off">🗺️ ${esc(msg)}</div>`; map = null; }
+  const markers = new Map();
+  function drawMap(list) {
+    if (!map) return;
+    layer.clearLayers(); markers.clear();
+    const css = getComputedStyle(document.documentElement);
+    const c = state.center;
+    L.circleMarker([c.lat, c.lon], { radius: 8, color: css.getPropertyValue("--ink").trim(), weight: 3, fillColor: css.getPropertyValue("--sky").trim(), fillOpacity: 1 }).addTo(layer).bindPopup(state.areaLabel || "Start");
+    const pts = [[c.lat, c.lon]];
+    list.forEach((p, i) => {
+      const m = L.circleMarker([p.lat, p.lon], { radius: 9, color: css.getPropertyValue("--line").trim(), weight: 2, fillColor: css.getPropertyValue("--hi").trim(), fillOpacity: 1 });
+      const pop = document.createElement("div"); pop.textContent = `${p.name} · ${p.cost === 0 ? "Free" : "~$" + p.cost}`;
+      m.bindPopup(pop); m.on("click", () => highlight(i, false)); m.addTo(layer); markers.set(i, m); pts.push([p.lat, p.lon]);
+    });
+    if (pts.length > 1) map.fitBounds(pts, { padding: [30, 30], maxZoom: 15 }); else map.setView([c.lat, c.lon], 13);
+  }
+  function highlight(i, fromCard) {
+    document.querySelectorAll("#list .ticket").forEach((el, j) => el.classList.toggle("active", j === i));
+    if (fromCard && markers.has(i) && map) { const m = markers.get(i); map.setView(m.getLatLng(), Math.max(map.getZoom(), 15)); m.openPopup(); if (window.innerWidth <= 860) $("mapbox").scrollIntoView({ behavior: reduce ? "auto" : "smooth", block: "center" }); }
+    if (!fromCard) { const el = document.querySelectorAll("#list .ticket")[i]; el && el.scrollIntoView({ behavior: reduce ? "auto" : "smooth", block: "nearest" }); }
+  }
+
+  // ---------- results ----------
+  function renderZone() {
+    const t = TIERS[state.tier];
+    $("zone-amt").textContent = state.tier === 0 ? "Free" : state.tier === TIERS.length - 1 ? "Sky's the limit" : t.label;
+    const canStretch = state.tier < TIERS.length - 1;
+    $("stretch").hidden = !canStretch;
+    if (canStretch) $("stretch-label").textContent = `Stretch to ${TIERS[state.tier + 1].label.replace("Under ", "")}?`;
+  }
+  function renderFilters() {
+    chipRow($("cats"), CATS, id => state.cat === id, id => { state.cat = id; renderFilters(); loadResults(); });
+    chipRow($("dists2"), DISTS.map(d => ({ id: d, label: d + " mi" })), id => state.radius === id, id => { state.radius = id; renderFilters(); loadResults(); }, true);
+    $("sort").value = state.sort;
+    const cat = CATS.find(c => c.id === state.cat);
+    const placeMode = !!cat.tags;
+    $("sort").disabled = !placeMode;
+    $("dists2").parentElement.style.opacity = placeMode ? "1" : ".5";
+    $("mapbox").hidden = !placeMode;
+    $("split").style.gridTemplateColumns = placeMode ? "" : "1fr";
+  }
+  function openResults(fresh) {
+    renderZone(); renderFilters(); show("results");
+    ensureMap(); loadResults();
+    if (fresh) burst(90);
+  }
+  function ticketFor(p, i) {
+    const el = document.createElement("article"); el.className = "ticket";
+    const hours = p.hours ? `<span>${esc(p.hours.length > 34 ? p.hours.slice(0, 34) + "…" : p.hours)}</span>` : "";
+    const where = p.addr ? `<span>${esc(p.addr)}</span>` : "";
+    const mapsUrl = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(p.name + " " + p.lat.toFixed(5) + "," + p.lon.toFixed(5))}`;
+    el.innerHTML = `
+      <div class="ticket-head"><h3>${esc(p.name)}</h3><span class="price">${p.cost === 0 ? "Free" : "~$" + p.cost}</span></div>
+      <div class="meta"><span><b>${p.dist < 0.1 ? "<0.1" : p.dist.toFixed(1)} mi</b></span><span>${esc(p.kind)}</span>${where}${hours}</div>
+      <div class="perf"></div>
+      <div class="tags"><span class="tag">fits everyone</span>${p.cost === 0 ? '<span class="tag">free</span>' : ""}${p.sample ? '<span class="tag">sample</span>' : ""}</div>
+      <div class="actions">
+        ${p.sample ? "" : `<a href="${mapsUrl}" target="_blank" rel="noopener">Directions ↗</a>`}
+        <button class="btn ghost sm show-map" type="button">Show on map</button>
+        <button class="btn mint sm pick" type="button"><span class="emo" aria-hidden="true">🙌</span>We're doing this</button>
+      </div>`;
+    el.querySelector(".pick").addEventListener("click", () => choose(p));
+    const sm = el.querySelector(".show-map");
+    if (!map) sm.remove(); else sm.addEventListener("click", () => highlight(i, true));
+    return el;
+  }
+  function ideaTicket(it) {
+    const el = document.createElement("article"); el.className = "ticket";
+    el.innerHTML = `
+      <div class="ticket-head"><h3>${esc(it.t)}</h3><span class="price">${it.cost === 0 ? "Free" : "~$" + it.cost}</span></div>
+      <p>${esc(it.d)}</p><div class="perf"></div>
+      <div class="tags"><span class="tag">fits everyone</span><span class="tag">no reservation needed</span></div>
+      <div class="actions"><button class="btn mint sm pick" type="button"><span class="emo" aria-hidden="true">🙌</span>We're doing this</button></div>`;
+    el.querySelector(".pick").addEventListener("click", () => choose({ name: it.t, kind: "Idea", cost: it.cost, idea: it.d }));
+    return el;
+  }
+  async function loadResults() {
+    const req = ++state.req;
+    const cat = CATS.find(c => c.id === state.cat);
+    const cap = TIERS[state.tier].max;
+    const list = $("list"); const status = $("status");
+    $("sample-banner").hidden = !state.sample || !cat.tags;
+    if (!cat.tags) {
+      const ideas = IDEAS.filter(i => i.cost <= cap);
+      list.innerHTML = ""; ideas.forEach(i => list.appendChild(ideaTicket(i)));
+      status.innerHTML = `<span><b>${ideas.length} ${ideas.length === 1 ? "idea" : "ideas"}</b> that fit the budget. No location needed.</span>`;
+      return;
+    }
+    status.innerHTML = `<span class="spinner" aria-hidden="true"></span><span>Finding ${cat.noun[1]} within ${state.radius} mi…</span>`;
+    list.innerHTML = "";
+    let places = state.sample ? null : await fetchPlaces(cat, state.center, state.radius);
+    if (req !== state.req) return;
+    if (places === null) { state.sample = true; $("sample-banner").hidden = false; places = samplePlaces(cat, state.center); }
+    const total = places.filter(p => p.dist <= state.radius);
+    let fit = total.filter(p => p.cost <= cap);
+    if (state.sort === "near") fit.sort((a, b) => a.dist - b.dist);
+    if (state.sort === "cheap") fit.sort((a, b) => a.cost - b.cost || a.dist - b.dist);
+    if (state.sort === "az") fit.sort((a, b) => a.name.localeCompare(b.name));
+    fit = fit.slice(0, 30);
+    const hidden = total.length - total.filter(p => p.cost <= cap).length;
+    if (!fit.length) {
+      list.innerHTML = `<div class="empty">No ${cat.noun[1]} in budget within ${state.radius} mi.<br>Try a bigger distance, another category, or a private stretch vote.</div>`;
+      status.innerHTML = hidden ? `<span>${hidden} spots nearby are over budget.</span>` : "";
+      drawMap([]); return;
+    }
+    fit.forEach((p, i) => list.appendChild(ticketFor(p, i)));
+    status.innerHTML = `<span><b>${fit.length} ${cat.noun[fit.length === 1 ? 0 : 1]}</b> within ${state.radius} mi that fit everyone${hidden ? ` · ${hidden} over budget hidden` : ""}</span>`;
+    drawMap(fit);
+  }
+  $("sort").addEventListener("change", (e) => { state.sort = e.target.value; loadResults(); });
+  $("area-btn").addEventListener("click", () => { const f = $("area-form2"); f.hidden = !f.hidden; if (!f.hidden) $("area-input2").focus(); });
+  const areaGo = () => handleArea($("area-input2").value, () => { $("area-form2").hidden = true; cache.clear(); loadResults(); });
+  $("area-go").addEventListener("click", areaGo);
+  $("area-input2").addEventListener("keydown", (e) => { if (e.key === "Enter") { e.preventDefault(); areaGo(); } });
+  $("near-me2").addEventListener("click", () => locateMe(() => { $("area-form2").hidden = true; state.sample = false; loadResults(); }));
+
+  // ---------- done ----------
+  function choose(p) {
+    state.chosen = p;
+    const price = p.cost === 0 ? "free" : `about $${p.cost} each`;
+    const where = p.idea ? p.idea : [p.kind, p.addr].filter(Boolean).join(" · ");
+    const link = p.lat != null && !p.sample ? `\nMap: https://www.google.com/maps/search/?api=1&query=${p.lat.toFixed(5)},${p.lon.toFixed(5)}` : "";
+    $("share-text").textContent = `Plan locked: ${p.name}! 🎉\n${where}\nCost: ${price}. Fits everyone's budget.${link}\nWho's in: ${state.friends.join(", ")}\n\nPlanned on Lowkey 🤫`;
+    show("done"); burst(140);
+  }
+  $("copy").addEventListener("click", async () => {
+    const text = $("share-text").textContent;
+    try { await navigator.clipboard.writeText(text); toast("Copied. Paste it in the group chat"); }
+    catch { const r = document.createRange(); r.selectNodeContents($("share-text")); const s = getSelection(); s.removeAllRanges(); s.addRange(r); toast("Text selected. Copy it from here"); }
+  });
+  $("back-spots").addEventListener("click", () => openResults(false));
+
+  // ---------- confetti ----------
+  const cv = $("confetti"), ctx = cv.getContext("2d"); let parts = [], raf = null;
+  function burst(n) {
+    if (reduce) return;
+    const dpr = window.devicePixelRatio || 1; cv.width = innerWidth * dpr; cv.height = innerHeight * dpr; ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+    const css = getComputedStyle(document.documentElement); const cols = ["--hi","--coral","--mint","--sky"].map(v => css.getPropertyValue(v).trim());
+    for (let i = 0; i < n; i++) parts.push({ x: innerWidth / 2 + (Math.random() - .5) * 120, y: innerHeight * .45, vx: (Math.random() - .5) * 14, vy: -Math.random() * 14 - 4, r: Math.random() * 6 + 4, c: cols[i % 4], rot: Math.random() * 6, vr: (Math.random() - .5) * .3, life: 0 });
+    if (!raf) raf = requestAnimationFrame(tick);
+  }
+  function tick() {
+    ctx.clearRect(0, 0, innerWidth, innerHeight);
+    parts.forEach(p => { p.vy += .42; p.x += p.vx; p.y += p.vy; p.vx *= .99; p.rot += p.vr; p.life++; ctx.save(); ctx.translate(p.x, p.y); ctx.rotate(p.rot); ctx.fillStyle = p.c; ctx.fillRect(-p.r / 2, -p.r / 2, p.r, p.r * .6); ctx.restore(); });
+    parts = parts.filter(p => p.y < innerHeight + 40 && p.life < 240);
+    raf = parts.length ? requestAnimationFrame(tick) : (ctx.clearRect(0, 0, innerWidth, innerHeight), null);
+  }
+
+  // ---------- wiring ----------
+  function resetRound() { state.turn = 0; state.answers = []; state.votes = []; state.mode = "budget"; state.chosen = null; state.cat = "free"; }
+  $("start").addEventListener("click", () => { resetRound(); renderSetup(); show("setup"); setTimeout(() => $("friend-name").focus(), 50); });
+  $("logo").addEventListener("click", () => { resetRound(); show("home"); });
+  $("to-turns").addEventListener("click", () => { resetRound(); startPass(); });
+  $("restart").addEventListener("click", () => { resetRound(); renderSetup(); show("setup"); });
+  $("new-plan").addEventListener("click", () => { resetRound(); state.friends = []; renderSetup(); show("setup"); });
+  renderSetup();
+})();
+</script>
+
+</body>
+</html>
